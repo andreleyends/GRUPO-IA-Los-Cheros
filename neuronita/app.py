@@ -291,8 +291,8 @@ def main():
         \\hat{y} = f(z) = \\begin{cases} 1 & \\text{si } z \\geq 0 \\\\ 0 & \\text{si } z < 0 \\end{cases}
         $$
 
-        Regla de actualización de pesos: \\( w_j \\leftarrow w_j + \\eta (y - \\hat{y}) x_j \\)
-        y \\( b \\leftarrow b + \\eta (y - \\hat{y}) \\).
+        Regla de actualización de pesos: $w_j \\leftarrow w_j + \\eta (y - \\hat{y}) x_j$
+        y $b \\leftarrow b + \\eta (y - \\hat{y})$.
         """
     )
 
