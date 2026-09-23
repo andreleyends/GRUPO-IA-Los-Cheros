@@ -6,6 +6,10 @@
 #  - Visualización: SOLO matplotlib (mostrada en la web con st.pyplot).
 #  - Sin scikit-learn, tensorflow, pytorch u otros frameworks de IA.
 #  - Para ejecutar:  streamlit run app.py
+#
+#  La interfaz incluye una sección educativa que explica, con las fórmulas y
+#  con los números reales de cada corrida, para qué sirve cada parámetro y
+#  cómo se obtiene el resultado del Perceptrón.
 # ============================================================================
 
 import numpy as np
@@ -236,6 +240,33 @@ def crear_figura(perceptron, X, y, compuerta, lr, epocas):
 
 
 # ============================================================================
+#  PARTE 4: EXPLICACIÓN PASO A PASO DEL CÁLCULO (para mostrar en la app)
+# ============================================================================
+
+def calcular_paso_a_paso(perceptron, X, y):
+    """
+    Calcula, para cada muestra del dataset, el valor de la suma ponderada z,
+    la predicción ŷ, el error e = y - ŷ y si la muestra fue acertada.
+    Se usa para mostrar 'cómo se obtuvo el resultado' con números reales.
+    """
+    filas = []
+    for xi, yi in zip(X, y):
+        z = float(np.dot(xi, perceptron.weights) + perceptron.bias)  # suma ponderada
+        y_hat = perceptron.predict(xi)                               # predicción (Heaviside)
+        error = int(yi - y_hat)                                      # error e = y - ŷ
+        filas.append({
+            "x1": int(xi[0]),
+            "x2": int(xi[1]),
+            "y (real)": int(yi),
+            "z = w1·x1 + w2·x2 + b": round(z, 4),
+            "ŷ = f(z)": int(y_hat),
+            "error e = y − ŷ": error,
+            "¿Acierto?": "Sí" if error == 0 else "No",
+        })
+    return filas
+
+
+# ============================================================================
 #  INTERFAZ GRÁFICA (STREAMLIT)
 # ============================================================================
 
@@ -265,27 +296,91 @@ def main():
         """
     )
 
+    # ---- Sección educativa (siempre visible) ----
+    st.subheader("Aprende a leer la app: ¿cómo funciona y qué controla cada parámetro?")
+
+    with st.expander("Paso 1 · ¿Cómo calcula una predicción?", expanded=True):
+        st.markdown(
+            """
+            Para cada muestra, la neurona hace **3 operaciones**:
+
+            **1. Suma ponderada:** multiplica cada entrada por su peso y suma el sesgo
+
+            $$
+            z = w_1 x_1 + w_2 x_2 + b
+            $$
+
+            Los pesos $w_1, w_2$ indican *cuánto influye* cada entrada y el sesgo $b$
+            actúa como un *umbral de disparo*.
+
+            **2. Función de activación (escalón de Heaviside):** convierte $z$ en una clase
+
+            $$
+            \\hat{y} = f(z) = \\begin{cases} 1 & \\text{si } z \\geq 0 \\\\ 0 & \\text{si } z < 0 \\end{cases}
+            $$
+
+            **3. Se compara con el valor real:** $e = y - \\hat{y}$.
+            Si $e \\neq 0$ hubo un error **y ahí es donde aprende** (paso 2).
+            """
+        )
+
+    with st.expander("Paso 2 · ¿Para qué sirve la tasa de aprendizaje (η)?"):
+        st.markdown(
+            """
+            Es **el tamaño del paso** de cada corrección. Cuando hay un error, los
+            pesos cambian según:
+
+            $$
+            w_j \\leftarrow w_j + \\eta \\cdot e \\cdot x_j, \\qquad b \\leftarrow b + \\eta \\cdot e
+            $$
+
+            Donde $e = y - \\hat{y}$. **Ejemplo** (compuerta AND, muestra $(1,1)$ que debe dar $1$ pero predijo $0$, o sea $e = +1$):
+            cada peso que estuvo activo sube en $\\eta \\cdot 1 \\cdot x_j$.
+
+            - **η pequeña (0.01):** pasos muy cortos → aprende estable pero **lento** (la AND tarda 6 épocas).
+            - **η moderada (0.1):** equilibrio → suele converger en el menor número de épocas (la AND en 4).
+            - **η grande (0.5):** pasos grandes → aprende rápido pero puede **rebasar** la frontera y necesitar épocas extra (la AND vuelve a 6).
+
+            **Analogía:** η es cuánto giras la perilla de un volumen: giras poco y tardas, giras mucho y pasas de largo el punto exacto.
+            """
+        )
+
+    with st.expander("Paso 3 · ¿Para qué sirven las épocas máximas?"):
+        st.markdown(
+            """
+            Una **época** es **una pasada completa por las 4 muestras** del dataset.
+            En cada época el algoritmo revisa las 4 filas, corrige los errores y cuenta cuántos errores hubo.
+
+            - Si al terminar la época hubo **0 errores** → el modelo aprendió (convergió) y se **detiene** (parada temprana).
+            - Si **agotó las épocas máximas** sin llegar a 0 errores → el modelo **no convergió** (es lo que pasa con la XOR,
+              que no es linealmente separable: ninguna recta puede separar sus clases).
+
+            **Analogía:** las épocas son los *intentos* que te permites para ajustar la perilla; si no lo logras en ese límite, te rindes.
+            """
+        )
+
     # ---- Panel lateral (sidebar) con los controles ----
     with st.sidebar:
         st.header("Configuración")
         compuerta = st.selectbox(
             "Compuerta lógica a simular",
             options=["AND", "OR", "XOR"],
-            help="AND, OR y XOR son problemas de clasificación binaria. "
-                 "AND y OR son linealmente separables; XOR no lo es, por lo "
-                 "que el Perceptrón simple NO podrá converger.",
+            help="Problemas de clasificación binaria. AND y OR son linealmente "
+                 "separables (el Perceptrón converge); XOR no lo es (no convergerá).",
         )
         lr = st.slider(
             "Tasa de aprendizaje (η)",
             min_value=0.01, max_value=1.0, value=0.1, step=0.01, format="%.2f",
-            help="Controla el tamaño de cada corrección de pesos. "
-                 "Valores muy pequeños convergen lento; valores grandes "
-                 "pueden 'rebasar' la frontera óptima.",
+            help="¿Qué es? Tamaño del paso con que se corrigen los pesos en cada "
+                 "error (w_j <- w_j + η·e·x_j). η pequeña = lento y estable; "
+                 "η grande = rápido pero puede rebasar la frontera.",
         )
         epocas = st.slider(
             "Épocas máximas",
             min_value=1, max_value=500, value=100, step=1,
-            help="Número máximo de pasadas completas sobre el dataset.",
+            help="¿Qué es? Cuántas pasadas completas por las 4 muestras se permiten. "
+                 "Si en alguna época hay 0 errores, se detiene (parada temprana). "
+                 "Si se agotan, no convergió.",
         )
         entrenar = st.button("Entrenar Perceptrón", type="primary", use_container_width=True)
 
@@ -293,7 +388,7 @@ def main():
         st.caption("Lógica: `numpy`  |  Gráficas: `matplotlib`")
 
     # ---- Tabla de verdad de la compuerta seleccionada (informativa) ----
-    with st.expander(f"Ver tabla de verdad de la compuerta {compuerta}"):
+    with st.expander(f"Tabla de verdad de la compuerta {compuerta} (el dataset)"):
         st.markdown(tabla_verdad(compuerta))
 
     # ---- Ejecución del entrenamiento al presionar el botón ----
@@ -328,37 +423,100 @@ def main():
 
         st.divider()
 
+        w1 = float(perceptron.weights[0])
+        w2 = float(perceptron.weights[1])
+        b = float(perceptron.bias)
+
+        # ------------------------------------------------------------
+        # Explicación del resultado con los números de ESTA corrida
+        # ------------------------------------------------------------
+        st.subheader("¿Cómo se calculó este resultado?")
+
+        st.markdown(
+            f"""
+            El entrenamiento dejó a la neurona con la ecuación:
+
+            $$
+            z = {w1:.3f}\\,x_1 + {w2:.3f}\\,x_2\\,{b:+.3f}
+            $$
+
+            La neurona predice **clase 1 si $z \\geq 0$** y **clase 0 si $z < 0$**.
+            La frontera de decisión (la recta verde de la gráfica) se obtiene de
+            $w_1 x_1 + w_2 x_2 + b = 0$ despejando $x_2$:
+            """
+        )
+
+        # Ecuación de la frontera: se arma con replace() para no chocar
+        # con las llaves de \frac{} dentro de un f-string.
+        ecuacion_frontera = "$$ x_2 = -\\frac{W1\\,x_1\\,B}{W2} $$"
+        ecuacion_frontera = (
+            ecuacion_frontera.replace("W1", f"{w1:.3f}")
+            .replace("B", f"{b:+.3f}")
+            .replace("W2", f"{w2:.3f}")
+        )
+        st.markdown(ecuacion_frontera)
+
+        st.markdown(
+            """La tabla siguiente muestra **el cálculo completo, muestra por muestra**,
+            con los pesos y el sesgo finales de esta corrida:
+            """
+        )
+
+        st.table(calcular_paso_a_paso(perceptron, X, y))
+
+        # ------------------------------------------------------------
+        # Cómo evolucionó el error por épocas (parada temprana)
+        # ------------------------------------------------------------
+        st.markdown(
+            "**Entrenamiento por épocas:** cada fila es una pasada completa por las "
+            "4 muestras. Cuando el número de errores llega a 0, la neurona deja de aprender."
+        )
+        st.table({
+            "Época": np.arange(1, len(perceptron.errors_history) + 1).tolist(),
+            "Errores": perceptron.errors_history,
+        })
+
+        st.divider()
+
         # ------------------------------------------------------------
         # Pesos finales del modelo entrenado
         # ------------------------------------------------------------
         st.subheader("Parámetros finales del modelo")
         col1, col2, col3 = st.columns(3)
-        col1.metric("Peso w1", f"{perceptron.weights[0]:.4f}")
-        col2.metric("Peso w2", f"{perceptron.weights[1]:.4f}")
-        col3.metric("Sesgo b (bias)", f"{perceptron.bias:.4f}")
+        col1.metric("Peso w1", f"{w1:.4f}")
+        col2.metric("Peso w2", f"{w2:.4f}")
+        col3.metric("Sesgo b (bias)", f"{b:.4f}")
 
         st.markdown(
-            f"La neurona implementa la regla de decisión "
-            f"**z = {perceptron.weights[0]:.3f}·x₁ + {perceptron.weights[1]:.3f}·x₂ "
-            f"{perceptron.bias:+.3f}**; emite clase **1** si z ≥ 0 y clase **0** si z < 0."
+            f"""
+            **¿Qué significan estos números?**
+
+            - **w1 = {w1:.3f}** y **w2 = {w2:.3f}** son los *pesos sinápticos* (fuerza de cada conexión):
+              un peso **positivo** significa que esa entrada aporta evidencia a favor de la clase 1;
+              un peso **negativo**, a favor de la clase 0; y cuanto **mayor es su magnitud**, más importante es esa entrada.
+            - **b = {b:.3f}** es el *sesgo* (umbral de disparo): desplaza la frontera. La neurona emite clase 1 solo si la
+              evidencia supera el umbral, es decir, si ${w1:.3f}\\,x_1 + {w2:.3f}\\,x_2 \\geq {-b:.3f}$.
+            """
         )
 
         # ------------------------------------------------------------
-        # Verificación: comparación entre valores reales y predicciones
+        # Verificación: precisión sobre la tabla de verdad
         # ------------------------------------------------------------
-        st.subheader("Verificación sobre la tabla de verdad")
         predicciones = [int(perceptron.predict(xi)) for xi in X]
         aciertos = sum(1 for p, yi in zip(predicciones, y) if p == yi)
-        st.table({
-            "x1": X[:, 0].tolist(),
-            "x2": X[:, 1].tolist(),
-            "y (real)": y.tolist(),
-            "ŷ (predicción)": predicciones,
-        })
-        st.info(
-            f"El modelo acierta **{aciertos} de {len(y)}** muestras "
-            f"({aciertos / len(y) * 100:.0f} % de precisión)."
-        )
+        if aciertos == len(y):
+            st.success(
+                f"El modelo acierta **{aciertos} de {len(y)}** muestras "
+                f"({aciertos / len(y) * 100:.0f} % de precisión): imita perfectamente "
+                f"la compuerta {compuerta}."
+            )
+        else:
+            st.warning(
+                f"El modelo acierta **{aciertos} de {len(y)}** muestras "
+                f"({aciertos / len(y) * 100:.0f} % de precisión). Como la compuerta "
+                f"**{compuerta}** no es linealmente separable, la mejor recta posible "
+                f"no puede acertar las 4 muestras."
+            )
 
 
 # Punto de entrada: Streamlit ejecuta el script como __main__
