@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El Perceptrón — la primera neurona artificial que aprende</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF2F5; --ink-2:#FFFFFF; --ink-3:#DCE5EA;
+  --line:rgba(18,50,74,0.14); --grid:rgba(18,50,74,0.055);
+  --paper:#102A40; --muted:#4E6B7D; --muted-2:#7C93A0;
+  --amber:#B4650A; --cyan:#0C8F82; --coral:#C43D3D;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#EEF2F5; } }
+:root[data-theme="dark"]{ --bg:#EEF2F5; }
+*{box-sizing:border-box;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+body{
+  margin:0; background:var(--bg); color:var(--paper);
+  font-family:var(--sans); line-height:1.55;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size:34px 34px;
+}
+@media (prefers-reduced-motion: reduce){ *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important;} }
+
+.wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+a{color:var(--amber);}
+
+/* ---------- rail: vertical trace connecting sections ---------- */
+.rail{position:relative;}
+.rail::before{
+  content:""; position:absolute; left:24px; top:0; bottom:0; width:2px;
+  background:linear-gradient(var(--ink-3), var(--line), var(--ink-3));
+}
+@media (max-width:640px){ .rail::before{left:14px;} }
+.node{position:relative; padding-left:64px;}
+.node::before{
+  content:""; position:absolute; left:16px; top:6px; width:16px; height:16px;
+  border-radius:50%; background:var(--bg); border:2px solid var(--amber);
+}
+@media (max-width:640px){ .node{padding-left:40px;} .node::before{left:6px;} }
+
+/* ---------- hero ---------- */
+header.hero{padding:64px 0 40px;}
+.eyebrow{font-family:var(--mono); font-size:13px; color:var(--muted); letter-spacing:.02em;}
+h1.title{
+  font-family:var(--mono); font-weight:700; font-size:clamp(38px,7vw,64px);
+  margin:10px 0 6px; line-height:1.02; color:var(--paper);
+}
+h1.title em{font-style:normal; color:var(--amber);}
+.subtitle{font-size:18px; color:var(--muted); max-width:52ch; margin:0 0 32px;}
+.diagram{width:100%; height:auto; display:block;}
+.diagram path.wire{fill:none; stroke:var(--muted-2); stroke-width:2;}
+.diagram path.wire.live{stroke:var(--amber); stroke-dasharray:6 260; stroke-dashoffset:0; animation:flow 2.6s linear infinite;}
+@keyframes flow{ to{ stroke-dashoffset:-266; } }
+.diagram circle.node-dot{fill:var(--ink-2); stroke:var(--muted-2); stroke-width:2;}
+.diagram circle.sum{stroke:var(--amber);}
+.diagram text{font-family:var(--mono); fill:var(--paper); font-size:14px;}
+.diagram text.small{fill:var(--muted); font-size:11px;}
+
+/* ---------- section heads ---------- */
+section{padding:56px 0;}
+.tag{font-family:var(--mono); font-size:13px; color:var(--amber); margin:0 0 8px;}
+h2{font-family:var(--mono); font-size:clamp(24px,4vw,32px); margin:0 0 18px; color:var(--paper); font-weight:600;}
+p.lede{color:var(--muted); max-width:66ch; margin:0 0 28px;}
+
+/* ---------- formula plates ---------- */
+.plates{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+@media (max-width:760px){ .plates{grid-template-columns:1fr;} }
+.plate{
+  background:var(--ink-2); border:1px solid var(--line); border-radius:4px; box-shadow:0 1px 3px rgba(16,42,64,0.06);
+  padding:20px; position:relative;
+}
+.plate .label{font-family:var(--mono); font-size:12px; color:var(--muted); margin-bottom:10px;}
+.plate .formula{font-family:var(--mono); font-size:17px; color:var(--cyan); overflow-x:auto; white-space:nowrap;}
+.plate .desc{font-size:14px; color:var(--muted); margin-top:12px;}
+
+/* ---------- experiment cards ---------- */
+.experiments{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+@media (max-width:760px){ .experiments{grid-template-columns:1fr;} }
+.xcard{background:var(--ink-2); border:1px solid var(--line); border-radius:4px; padding:20px; box-shadow:0 1px 3px rgba(16,42,64,0.06);}
+.xcard h3{font-family:var(--mono); font-size:20px; margin:0 0 4px;}
+.xcard .status{font-family:var(--mono); font-size:12px; margin:4px 0 14px; display:inline-block; padding:2px 8px; border-radius:20px;}
+.status.ok{color:#fff; background:var(--cyan);}
+.status.bad{color:#fff; background:var(--coral);}
+.xcard svg{width:132px; height:132px; display:block; margin:8px auto 14px;}
+.xcard .row{display:flex; justify-content:space-between; font-family:var(--mono); font-size:13px; color:var(--muted); padding:4px 0; border-top:1px solid var(--line);}
+.xcard .row b{color:var(--paper); font-weight:500;}
+
+/* ---------- eta bars ---------- */
+.etawrap{background:var(--ink-2); border:1px solid var(--line); border-radius:4px; padding:24px; box-shadow:0 1px 3px rgba(16,42,64,0.06);}
+.bars{display:flex; align-items:flex-end; gap:28px; height:150px; padding:0 6px;}
+.bargrp{display:flex; align-items:flex-end; gap:6px; flex:1; height:100%;}
+.bar{flex:1; border-radius:2px 2px 0 0; position:relative;}
+.bar.and{background:var(--amber);}
+.bar.or{background:var(--cyan);}
+.bar span{position:absolute; top:-20px; left:0; right:0; text-align:center; font-family:var(--mono); font-size:12px; color:var(--muted);}
+.etalabels{display:flex; gap:28px; margin-top:8px; padding:0 6px;}
+.etalabels div{flex:1; text-align:center; font-family:var(--mono); font-size:12px; color:var(--muted);}
+.legend{display:flex; gap:20px; margin-top:18px; font-family:var(--mono); font-size:12px; color:var(--muted);}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; vertical-align:middle;}
+
+/* ---------- timeline ---------- */
+.tl{border-left:2px solid var(--line); margin-left:6px;}
+.tlitem{position:relative; padding:0 0 30px 26px;}
+.tlitem::before{content:""; position:absolute; left:-7px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--bg); border:2px solid var(--cyan);}
+.tlitem .yr{font-family:var(--mono); color:var(--amber); font-size:15px; font-weight:600;}
+.tlitem p{margin:4px 0 0; color:var(--muted); font-size:14.5px; max-width:60ch;}
+
+/* ---------- footer ---------- */
+footer{padding:48px 0 64px; border-top:1px solid var(--line); margin-top:20px;}
+.credits{font-family:var(--mono); font-size:13px; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px 20px;}
+.credits a{color:var(--paper); text-decoration:none; border-bottom:1px dotted var(--muted-2);}
+.credits a:hover{color:var(--amber); border-color:var(--amber);}
+.team{color:var(--muted); font-size:13.5px; margin-top:14px; line-height:1.7;}
+</style>
+</head>
+<body>
+<div class="wrap rail">
+
+<header class="hero node">
+  <div class="eyebrow">Inteligencia Artificial · UAC · Grupo IA Los Cheros</div>
+  <h1 class="title">El <em>Perceptrón</em></h1>
+  <p class="subtitle">La primera neurona artificial capaz de aprender de sus propios errores. Rosenblatt, 1958.</p>
+
+  <svg class="diagram" viewBox="0 0 820 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama de un perceptrón: dos entradas ponderadas se suman con un sesgo y pasan por una función escalón para producir una salida binaria">
+    <path class="wire live" d="M70,60 C220,60 220,110 340,110"/>
+    <path class="wire live" d="M70,160 C220,160 220,110 340,110"/>
+    <path class="wire live" d="M380,110 L470,110"/>
+    <path class="wire live" d="M550,110 L660,110"/>
+    <circle class="node-dot" cx="55" cy="60" r="26"/>
+    <circle class="node-dot" cx="55" cy="160" r="26"/>
+    <circle class="node-dot sum" cx="360" cy="110" r="26"/>
+    <circle class="node-dot sum" cx="510" cy="110" r="26"/>
+    <circle class="node-dot" cx="700" cy="110" r="26"/>
+    <text x="55" y="65" text-anchor="middle">x₁</text>
+    <text x="55" y="165" text-anchor="middle">x₂</text>
+    <text x="360" y="116" text-anchor="middle">Σ</text>
+    <text x="510" y="116" text-anchor="middle">f</text>
+    <text x="700" y="116" text-anchor="middle">ŷ</text>
+    <text class="small" x="140" y="72">w₁</text>
+    <text class="small" x="140" y="180">w₂</text>
+    <text class="small" x="360" y="70">+ b</text>
+    <text class="small" x="700" y="150" text-anchor="middle">salida</text>
+  </svg>
+</header>
+
+<section class="node">
+  <div class="tag">01 — Fundamento</div>
+  <h2>Tres reglas gobiernan toda su decisión</h2>
+  <p class="lede">El Perceptrón combina las entradas, decide con un umbral, y si se equivoca, ajusta sus propios parámetros. Nada más — y nada menos.</p>
+  <div class="plates">
+    <div class="plate">
+      <div class="label">Potencial de activación</div>
+      <div class="formula">z = w·x + b</div>
+      <div class="desc">Suma ponderada de las entradas más el sesgo. Un solo número que resume la evidencia a favor de la clase 1.</div>
+    </div>
+    <div class="plate">
+      <div class="label">Función de activación (escalón)</div>
+      <div class="formula">ŷ = 1 si z≥0, si no 0</div>
+      <div class="desc">Convierte z en una decisión binaria. Traza la recta de separación w₁x₁ + w₂x₂ + b = 0.</div>
+    </div>
+    <div class="plate">
+      <div class="label">Regla de aprendizaje</div>
+      <div class="formula">w ← w + η(y−ŷ)x</div>
+      <div class="desc">Si se equivocó, corrige cada peso en proporción al error, la entrada y la tasa η. El sesgo se actualiza igual, sin x.</div>
+    </div>
+  </div>
+</section>
+
+<section class="node">
+  <div class="tag">02 — Experimentos</div>
+  <h2>Tres compuertas, un mismo modelo</h2>
+  <p class="lede">Con η = 0.1 y hasta 100 épocas, el mismo código produjo dos éxitos rotundos y un fracaso instructivo.</p>
+  <div class="experiments">
+
+    <div class="xcard">
+      <h3>AND</h3>
+      <span class="status ok">converge · época 4</span>
+      <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="10" y1="150" x2="150" y2="10" stroke="#0C8F82" stroke-width="2"/>
+        <circle cx="20" cy="140" r="8" fill="#FFFFFF" stroke="#B7C6CF" stroke-width="2"/>
+        <circle cx="20" cy="20" r="8" fill="#FFFFFF" stroke="#B7C6CF" stroke-width="2"/>
+        <circle cx="140" cy="140" r="8" fill="#FFFFFF" stroke="#B7C6CF" stroke-width="2"/>
+        <circle cx="140" cy="20" r="8" fill="#B4650A" stroke="#B4650A" stroke-width="2"/>
+      </svg>
+      <div class="row"><span>Errores/época</span><b>2,3,3,0</b></div>
+      <div class="row"><span>w₁, w₂, b</span><b>0.20, 0.10, −0.20</b></div>
+      <div class="row"><span>Precisión</span><b>4/4 (100%)</b></div>
+    </div>
+
+    <div class="xcard">
+      <h3>OR</h3>
+      <span class="status ok">converge · época 4</span>
+      <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="10" y1="105" x2="105" y2="10" stroke="#0C8F82" stroke-width="2"/>
+        <circle cx="20" cy="140" r="8" fill="#FFFFFF" stroke="#B7C6CF" stroke-width="2"/>
+        <circle cx="20" cy="20" r="8" fill="#B4650A" stroke="#B4650A" stroke-width="2"/>
+        <circle cx="140" cy="140" r="8" fill="#B4650A" stroke="#B4650A" stroke-width="2"/>
+        <circle cx="140" cy="20" r="8" fill="#B4650A" stroke="#B4650A" stroke-width="2"/>
+      </svg>
+      <div class="row"><span>Errores/época</span><b>2,2,1,0</b></div>
+      <div class="row"><span>w₁, w₂, b</span><b>0.10, 0.10, −0.10</b></div>
+      <div class="row"><span>Precisión</span><b>4/4 (100%)</b></div>
+    </div>
+
+    <div class="xcard">
+      <h3>XOR</h3>
+      <span class="status bad">no converge</span>
+      <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="80" y1="0" x2="80" y2="160" stroke="#C43D3D" stroke-width="2"/>
+        <circle cx="20" cy="140" r="8" fill="#FFFFFF" stroke="#B7C6CF" stroke-width="2"/>
+        <circle cx="20" cy="20" r="8" fill="#B4650A" stroke="#B4650A" stroke-width="2"/>
+        <circle cx="140" cy="140" r="8" fill="#FFFFFF" stroke="#B7C6CF" stroke-width="2"/>
+        <circle cx="140" cy="20" r="8" fill="#B4650A" stroke="#B4650A" stroke-width="2"/>
+      </svg>
+      <div class="row"><span>Errores/época</span><b>3,3,4,4…</b></div>
+      <div class="row"><span>w₁, w₂, b</span><b>−0.10, 0.00, 0.00</b></div>
+      <div class="row"><span>Precisión</span><b>2/4 (50%)</b></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="node">
+  <div class="tag">03 — Efecto de η</div>
+  <h2>¿Aprender rápido siempre es mejor?</h2>
+  <p class="lede">No necesariamente. Una η intermedia convergió más rápido que sus extremos en la compuerta más exigente.</p>
+  <div class="etawrap">
+    <div class="bars">
+      <div class="bargrp">
+        <div class="bar and" style="height:85.7%"><span>6</span></div>
+        <div class="bar or" style="height:57.1%"><span>4</span></div>
+      </div>
+      <div class="bargrp">
+        <div class="bar and" style="height:57.1%"><span>4</span></div>
+        <div class="bar or" style="height:57.1%"><span>4</span></div>
+      </div>
+      <div class="bargrp">
+        <div class="bar and" style="height:85.7%"><span>6</span></div>
+        <div class="bar or" style="height:57.1%"><span>4</span></div>
+      </div>
+    </div>
+    <div class="etalabels"><div>η = 0.01</div><div>η = 0.1</div><div>η = 0.5</div></div>
+    <div class="legend"><span><i style="background:#B4650A"></i>AND</span><span><i style="background:#0C8F82"></i>OR</span></div>
+  </div>
+</section>
+
+<section class="node">
+  <div class="tag">04 — Un poco de historia</div>
+  <h2>De la neurona lógica al invierno de la IA</h2>
+  <div class="tl">
+    <div class="tlitem"><div class="yr">1943 — McCulloch &amp; Pitts</div><p>Primer modelo matemático de neurona artificial: una unidad binaria capaz de calcular funciones lógicas.</p></div>
+    <div class="tlitem"><div class="yr">1958 — Rosenblatt</div><p>Presenta el Perceptrón: la primera neurona con una regla de aprendizaje propia, construida como máquina física con potenciómetros.</p></div>
+    <div class="tlitem"><div class="yr">1969 — Minsky &amp; Papert</div><p>Demuestran que un Perceptrón simple no puede resolver problemas no separables linealmente, como el XOR.</p></div>
+    <div class="tlitem"><div class="yr">1986 — Rumelhart, Hinton &amp; Williams</div><p>La retropropagación permite entrenar redes multicapa, resolviendo por fin lo que el Perceptrón simple no pudo.</p></div>
+  </div>
+</section>
+
+<footer class="node">
+  <div class="team">
+    <strong>Grupo IA Los Cheros</strong> — Huamantalla Ríos, D. · Latorre Campos, A. · Ordoñez Paniura, M. · Suel Monrroy, D.<br>
+    Curso de Inteligencia Artificial, Universidad Andina del Cusco · Docente: Espetia Huamanga, Hugo
+  </div>
+  <div class="credits" style="margin-top:16px;">
+    <a href="https://grupo-ia-los-cheros-s2x5jsujcoobhgwvgqmfxi.streamlit.app/" target="_blank" rel="noopener">App interactiva ↗</a>
+    <a href="https://github.com/andreleyends/GRUPO-IA-Los-Cheros" target="_blank" rel="noopener">Código en GitHub ↗</a>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
