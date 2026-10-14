@@ -1,0 +1,14 @@
+# Entorno virtual y cachés
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Dataset local (en la nube se descarga con keras.datasets)
+archive/
+
+# Artefactos de entrenamiento
+*.log
+
+# Pin de Python (Streamlit Community Cloud lo ignora; se elige en Advanced settings)
+.python-version
