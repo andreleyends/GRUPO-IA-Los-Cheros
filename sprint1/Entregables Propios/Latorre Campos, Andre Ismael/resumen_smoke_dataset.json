@@ -1,0 +1,23 @@
+{
+  "imagenes_usadas": 200,
+  "recortes_extraidos": 1534,
+  "media_recortes_por_imagen": 7.67,
+  "forma_memmap": [
+    1534,
+    144,
+    144,
+    3
+  ],
+  "dtype": "uint8",
+  "bytes_memmap": 95427072,
+  "media_pixeles": 113.44,
+  "augmentation_demo": {
+    "volteo": true,
+    "brillo_contraste": true,
+    "recorte_con_relleno": [
+      144,
+      144,
+      3
+    ]
+  }
+}

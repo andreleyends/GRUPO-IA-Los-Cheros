@@ -1,0 +1,160 @@
+{
+  "texto_preferencia": "elegante, oficina, minimalista, colores neutros, entallado",
+  "dimensiones": [
+    "formalidad.casual",
+    "formalidad.smart_casual",
+    "formalidad.formal",
+    "formalidad.sport",
+    "formalidad.fiesta",
+    "estilo.clasico",
+    "estilo.moderno",
+    "estilo.bohemio",
+    "estilo.minimalista",
+    "estilo.urbano",
+    "color_base.neutro",
+    "color_base.calido",
+    "color_base.frio",
+    "color_base.pastel",
+    "color_base.vivo",
+    "color_base.oscuro",
+    "estampado.liso",
+    "estampado.rayas",
+    "estampado.cuadros",
+    "estampado.floral",
+    "estampado.grafico",
+    "silueta.ajustado",
+    "silueta.holgado",
+    "silueta.oversize",
+    "silueta.recto",
+    "silueta.entallado",
+    "clima.calor",
+    "clima.frio",
+    "clima.lluvia",
+    "clima.entretiempo",
+    "ocasion.oficina",
+    "ocasion.diario",
+    "ocasion.deporte",
+    "ocasion.noche",
+    "ocasion.viaje",
+    "material.tela",
+    "material.punto",
+    "material.cuero",
+    "material.denim",
+    "material.tecnico"
+  ],
+  "vector": [
+    0.0,
+    0.5,
+    0.8,
+    0.0,
+    0.0,
+    0.5,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.6,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "dimensiones_activas": [
+    "formalidad.smart_casual",
+    "formalidad.formal",
+    "estilo.clasico",
+    "estilo.minimalista",
+    "color_base.neutro",
+    "estampado.liso",
+    "silueta.entallado",
+    "ocasion.oficina"
+  ],
+  "casos": [
+    {
+      "prendas": [
+        "shorts",
+        "top, t-shirt, sweatshirt"
+      ],
+      "contexto": {
+        "clima": "frio",
+        "ocasion": "diario",
+        "colores_vivos": 1
+      },
+      "score_modelo": 0.9,
+      "score_final": -0.1,
+      "reglas": [
+        {
+          "regla": "invierno_sin_short",
+          "penalizacion": 1.0,
+          "motivo": "Shorts con clima frio"
+        }
+      ]
+    },
+    {
+      "prendas": [
+        "suit",
+        "shirt, blouse"
+      ],
+      "contexto": {
+        "clima": "entretiempo",
+        "ocasion": "oficina",
+        "formalidad": "formal",
+        "colores_vivos": 0
+      },
+      "score_modelo": 0.8,
+      "score_final": 0.8,
+      "reglas": []
+    },
+    {
+      "prendas": [
+        "estampado",
+        "floral",
+        "cuadros"
+      ],
+      "contexto": {
+        "clima": "calor",
+        "ocasion": "noche",
+        "colores_vivos": 3
+      },
+      "score_modelo": 0.7,
+      "score_final": -0.4,
+      "reglas": [
+        {
+          "regla": "sin_doble_estampado",
+          "penalizacion": 0.6,
+          "motivo": "Dos o mas estampados fuertes en el mismo conjunto"
+        },
+        {
+          "regla": "limite_color_vivo",
+          "penalizacion": 0.5,
+          "motivo": "Muchos colores vivos compitiendo"
+        }
+      ]
+    }
+  ]
+}
