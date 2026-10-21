@@ -34,10 +34,39 @@ uv pip install --python .venv\Scripts\python.exe -r requirements.txt
 ## Entrenar el modelo (opcional pero recomendado)
 
 ```powershell
-.venv\Scripts\python.exe train.py
+.venv\Scripts\python.exe train.py          # modelo base
+.venv\Scripts\python.exe train_final.py    # modelo final robusto (recomendado para desplegar)
 ```
 
 Genera `models/fashion_cnn.keras` (CNN) y `models/baseline_mlp.keras` (MLP de comparación).
+`train_final.py` entrena un candidato con **data augmentation de producción**
+(geometría + volteo horizontal + brillo suave), lo compara contra el mejor
+modelo de `results/` y **despliega el mejor** en `models/fashion_cnn.keras`
+(respaldando el anterior en `.bak`).
+
+## Preprocesamiento de imágenes subidas (inferencia)
+
+El modelo se entrenó con Fashion-MNIST: **prenda clara sobre fondo oscuro, centrada,
+con margen y buen contraste**. Para que una foto real se acerque a esa distribución,
+`preprocess_uploaded` (en `src/deployment.py`) aplica:
+
+1. Escala de grises.
+2. **Normalización de polaridad**: si el fondo (estimado por los píxeles del borde) es claro, o
+   si la prenda es más oscura que el fondo, la imagen se invierte.
+3. **Limpieza de fondo** para eliminar ruido.
+4. **Recorte al contorno** de la prenda y **centrado con margen** (la prenda ocupa ~80% del
+   lienzo; si toca los bordes el modelo tiende a confundir siluetas alargadas con "Bolso").
+5. **Normalización de contraste** del objeto (percentiles 2–98) para que las fotos de bajo
+   contraste produzcan siluetas visibles.
+6. Redimensionado a 28×28 y normalización a `[0, 1]`.
+
+La interfaz muestra además el **top-3 de predicciones** y marca **"No reconocido"** cuando la
+confianza máxima es < 50%, e incluye un **control de rotación** (±45°) para prendas
+fotografiadas en diagonal (p. ej. sandalias de tacón).
+
+> Limitación: las fotos reales son un dominio distinto al del dataset. La precisión mejora
+> notablemente con la prenda centrada y con buen contraste; en fotos con fondos muy complejos
+> o de bajo contraste la predicción puede no ser fiable.
 
 ## Ejecutar la interfaz gráfica
 
@@ -66,11 +95,33 @@ Notas para la nube:
 - `requirements.txt` usa `tensorflow-cpu` (evita dependencias CUDA en Linux).
 - La primera carga tarda unos segundos mientras se descarga el dataset.
 
+## Entregables del taller
+
+En la carpeta [`ENTREGABLES/`](ENTREGABLES/) se encuentran los entregables del taller
+**«Diseño y Optimización de una CNN para Clasificación de Imágenes Complejas»**:
+
+- `Notebook_CNN_FashionMNIST.ipynb`: notebook con código limpio, documentado y celdas ejecutadas.
+- `Informe_CNN_FashionMNIST.docx`: informe editable con curvas Loss/Accuracy, matriz de
+  confusión y cálculo de la precisión mediante la fórmula de Accuracy.
+- `figures/`: figuras generadas por el notebook.
+
+Se regeneran con:
+
+```powershell
+.venv\Scripts\python.exe build_notebook_entregable.py
+.venv\Scripts\python.exe build_informe_entregable.py
+```
+
 ## Estructura del proyecto
 
 ```
-app.py                      # GUI Streamlit (6 pestañas = 6 fases)
-train.py                    # Entrenamiento por línea de comandos
+app.py                      # GUI Streamlit (6 pestañas = 6 fases CRISP-ML)
+train.py                    # Entrenamiento por línea de comandos (modelo base)
+train_final.py              # Candidato de producción + comparación y despliegue del mejor
+validate_fixes.py           # Validación de mejoras de preprocesado y modelo
+experiments.py              # Experimentación comparativa (Fase C del taller)
+build_notebook_entregable.py # Genera y ejecuta el notebook entregable
+build_informe_entregable.py  # Genera el informe Word entregable
 requirements.txt
 src/
   config.py                 # Clases, hiperparámetros, rutas, KPIs
@@ -83,9 +134,12 @@ src/
   deployment.py             # Fase 6: inferencia
 archive/                    # Dataset (CSV)
 models/                     # Modelos entrenados (.keras)
+results/                    # Resultados de experiments.py
+ENTREGABLES/                # Notebook, informe Word, figuras y resultados del taller
 ```
 
 ## Resultados esperados
 
-- Accuracy en test: **~91–92%** (objetivo ≥ 90%).
+- Accuracy en test: **~92.4%** (objetivo ≥ 90%).
 - Latencia de inferencia: **< 50 ms** por imagen.
+- Calzado del test set clasificado como "Bolso" vía pipeline de subida: **0%**.

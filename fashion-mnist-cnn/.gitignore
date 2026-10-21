@@ -9,6 +9,12 @@ archive/
 
 # Artefactos de entrenamiento
 *.log
+*.bak
+streamlit_out.log
+streamlit_err.log
+
+# Imágenes/fotos de prueba locales (no forman parte de la app desplegada)
+fallos/
 
 # Pin de Python (Streamlit Community Cloud lo ignora; se elige en Advanced settings)
 .python-version

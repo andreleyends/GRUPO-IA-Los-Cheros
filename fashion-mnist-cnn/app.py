@@ -475,10 +475,41 @@ with tabs[5]:
                 c1, c2 = st.columns(2)
                 c1.markdown("**Imagen original**")
                 c1.image(pil, caption="Entrada", width=220)
-                invert = st.selectbox("Inversión de color", ["auto", "sí", "no"], index=0)
-                image = preprocess_uploaded(pil, invert=invert)
+                cc1, cc2, cc3 = st.columns(3)
+                invert = cc1.selectbox(
+                    "Inversión de color",
+                    ["auto", "sí", "no"],
+                    index=0,
+                    help="Corrige la polaridad. Fashion-MNIST usa prenda clara sobre fondo oscuro.",
+                )
+                clean = cc2.checkbox(
+                    "Limpiar fondo y centrar",
+                    value=True,
+                    help="Recorta la prenda a su contorno, la centra y elimina el fondo.",
+                )
+                grados = cc3.slider(
+                    "Rotación",
+                    min_value=-45,
+                    max_value=45,
+                    value=0,
+                    step=5,
+                    help=(
+                        "Prendas en diagonal (p. ej. sandalias de tacón) pueden confundirse. "
+                        "Rota hasta ver la silueta lo más horizontal/vertical posible."
+                    ),
+                )
+                pil_rot = (
+                    pil.rotate(grados, resample=Image.BILINEAR, expand=True) if grados else pil
+                )
+                image = preprocess_uploaded(
+                    pil_rot, invert=invert, clean_background=clean, crop=clean
+                )
                 c2.markdown("**Transformada (28×28)**")
                 c2.image(image[..., 0], caption="Entrada al modelo", width=140, clamp=True)
+                st.caption(
+                    "Nota: el modelo se entrenó con Fashion-MNIST (prenda clara sobre fondo oscuro). "
+                    "Para mejores resultados sube una foto de la prenda centrada y con buen contraste."
+                )
         else:
             if st.button("🎲 Nueva muestra aleatoria"):
                 st.session_state["deploy_idx"] = int(np.random.randint(0, len(x_test_raw)))
@@ -498,12 +529,26 @@ with tabs[5]:
             c1, c2 = st.columns([1, 2])
             with c1:
                 st.markdown("### Predicción")
-                st.metric("Clase predicha", f"{result['index']} - {result['label']}")
+                if result["recognized"]:
+                    st.metric("Clase predicha", f"{result['index']} - {result['label']}")
+                else:
+                    st.metric(
+                        "Clase predicha",
+                        "❓ No reconocido",
+                        help=(
+                            f"La mejor opción fue «{result['raw_label']}» pero con solo "
+                            f"{result['confidence']:.1%} de confianza. Prueba con una foto "
+                            "más centrada y con mejor contraste."
+                        ),
+                    )
                 st.metric("Confianza", f"{result['confidence']:.1%}")
                 st.metric("Latencia", f"{result['latency_ms']:.1f} ms")
                 if real_label is not None:
-                    acierto = result["index"] == real_label
+                    acierto = result["recognized"] and result["index"] == real_label
                     st.markdown("✅ Correcto" if acierto else "❌ Incorrecto")
+                st.markdown("**Top-3**")
+                for r in result["top3"]:
+                    st.markdown(f"- {r['label']}: **{r['confidence']:.1%}**")
             with c2:
                 st.markdown("### Probabilidad por clase")
                 probs = pd.Series(result["probabilities"], index=CLASS_NAMES_ES, name="Probabilidad")
