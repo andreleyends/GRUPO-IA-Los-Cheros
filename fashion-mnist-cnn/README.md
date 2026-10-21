@@ -95,6 +95,13 @@ Notas para la nube:
 - `requirements.txt` usa `tensorflow-cpu` (evita dependencias CUDA en Linux).
 - La primera carga tarda unos segundos mientras se descarga el dataset.
 
+## Contexto completo del proyecto
+
+El archivo [`CONTEXTO_PROYECTO.md`](CONTEXTO_PROYECTO.md) documenta **todo** el trabajo:
+decisiones, experimentos, problemas encontrados (confusión de calzado con "Bolso" en fotos
+reales, domain shift), soluciones aplicadas, resultados y siguientes pasos. Pensado como
+documento de traspaso.
+
 ## Entregables del taller
 
 En la carpeta [`ENTREGABLES/`](ENTREGABLES/) se encuentran los entregables del taller
@@ -123,6 +130,7 @@ experiments.py              # Experimentación comparativa (Fase C del taller)
 build_notebook_entregable.py # Genera y ejecuta el notebook entregable
 build_informe_entregable.py  # Genera el informe Word entregable
 requirements.txt
+CONTEXTO_PROYECTO.md        # Documento de traspaso: todo el trabajo, problemas y decisiones
 src/
   config.py                 # Clases, hiperparámetros, rutas, KPIs
   data_loader.py            # Carga de los CSV de Fashion-MNIST
