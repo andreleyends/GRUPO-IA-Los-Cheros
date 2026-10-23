@@ -1,0 +1,24 @@
+{
+  "fecha": "2026-10-23 11:01:15",
+  "escenario": "B_4000_imagenes",
+  "semilla": 42,
+  "imagenes_candidatas": 4199,
+  "imagenes_finales": 4000,
+  "instancias_finales": 28565,
+  "instancias_principales": 14670,
+  "instancias_partes": 13895,
+  "con_atributos": 18114,
+  "pct_con_atributos": 63.4132679852967,
+  "imagenes_con_par": 3365,
+  "anotaciones_finales": 28565,
+  "faltantes_imagen": 0,
+  "errores_color": 0,
+  "filtros": {
+    "seleccionadas": 31670,
+    "area_pequena": 1395,
+    "bbox_invalida": 255
+  },
+  "total_leidas": 333401,
+  "categorias": 46,
+  "duracion_min": 3.09
+}

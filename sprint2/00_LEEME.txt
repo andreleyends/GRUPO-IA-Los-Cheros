@@ -1,0 +1,59 @@
+STYLEMATE - SPRINT 2 - ENTREGA FINAL
+=====================================
+
+Esta carpeta es la entrega completa del Sprint 2. El documento principal es:
+
+  01_DOCUMENTO_FINAL\Entrega_Final_Sprint2_StyleMate.docx
+
+Ese Word reúne los 8 entregables técnicos:
+3.1, 3.2, 3.3, 4.1, 4.2, 4.3, 5.1 y 5.2.
+
+Cada sección conserva el contenido del informe original y termina con una ficha
+de trazabilidad que indica:
+- dónde están los datos de entrada;
+- dónde están los datos generados;
+- qué script generó esa sección;
+- funciones clave del script;
+- evidencia (métricas y figuras).
+
+ESTRUCTURA
+----------
+01_DOCUMENTO_FINAL   Documento Word unificado.
+02_DATASET           CSV, JSON, pares, embeddings, perfiles y figuras del dataset.
+03_ENTRENAMIENTO     Script, configuración, modelo CNN, métricas y curvas.
+04_RESULTADOS        Métricas consolidadas, ablación, figuras y métricas completas.
+05_CODIGO            Pipeline completo, modelos, generador de documentos y requisitos.
+06_RESPALDO          DOCX originales, informes Markdown y documentos Scrum.
+
+CÓMO RESPONDER "DÓNDE ESTÁ EL DATASET LIMPIO"
+--------------------------------------------
+- 02_DATASET\imagenes_subset.csv       -> 4.000 imágenes seleccionadas.
+- 02_DATASET\instancias_limpias.csv    -> 28.565 instancias validadas.
+- 02_DATASET\instancias_split.csv      -> instancias con train/val/test.
+- 05_CODIGO\src\3_1_limpiar_dataset.py -> código que hizo la limpieza.
+
+CÓMO RESPONDER "DÓNDE ESTÁ EL CÓDIGO"
+------------------------------------
+- Limpieza:       05_CODIGO\src\3_1_limpiar_dataset.py
+- Pares:          05_CODIGO\src\3_2_generar_pares.py
+- Splits:         05_CODIGO\src\3_3_splits.py
+- CNN:            05_CODIGO\src\4_1_entrenar_cnn.py
+- Compatibilidad: 05_CODIGO\src\4_2_entrenar_compat.py
+- Gusto/reglas:   05_CODIGO\src\4_3_entrenar_taste.py
+- Métricas:       05_CODIGO\src\5_1_metricas.py
+- Ablación:       05_CODIGO\src\5_2_ablacion.py
+
+DATOS PESADOS NO INCLUIDOS
+--------------------------
+- sprint2\data\processed\recortes_144.npy  -> 1,7 GB
+- sprint1\datos\raw\train2020.zip           -> 3,2 GB
+- sprint1\datos\raw\instances_attributes_train2020.json -> 517 MB
+
+Están en la carpeta original del proyecto. Las rutas exactas se indican en
+02_DATASET\UBICACION_DATASET_ORIGINAL.txt y 05_CODIGO\UBICACION_DATA.txt.
+
+NOTA
+----
+El pipeline se ejecuta desde la carpeta original sprint2, con su .venv y su
+carpeta data. Esta entrega es para revisión y presentación; no es un entorno
+virtual autocontenido.

@@ -1,0 +1,23 @@
+RESULTADOS - QUE MOSTRAR
+========================
+
+5.1 Reporte de metricas:
+
+- 5_1_resumen.json  -> resumen completo
+- 5_1_resumen.csv   -> tabla para abrir en Excel
+- 5_1_resumen.png   -> grafico resumen
+
+5.2 Reporte comparativo y de ablacion:
+
+- 5_2_ablacion.json       -> resultados completos
+- 5_2_ablacion_compat.csv -> comparacion de variantes
+- 5_2_ablacion_reglas.csv -> taste vs taste + reglas
+- 5_2_ablacion.png        -> grafico de ablacion
+
+Resultados clave:
+
+- Compatibilidad: AUC 0,866; AP 0,726; F1 0,705
+- Ablacion: AUC 0,867 completo vs 0,825 sin CNN
+- Taste: NDCG@10 0,964
+- Taste + reglas: NDCG@10 0,961
+- Violacion top-10: 10,0 % sin reglas -> 0,0 % con reglas

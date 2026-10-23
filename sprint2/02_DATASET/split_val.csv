@@ -1,0 +1,399 @@
+id,file_name,width,height,isstatic,n_main,n_main_distinct,dominant_main,has_pair,fuente_muestra,n_validas,split
+37916,58ee7169b118deb09c3b5bdcbac762d8.jpg,767,1024,1,3,2,shoe,True,con_par,5,val
+42640,af4c07f728392ebf0a402f755529cc47.jpg,696,1024,1,3,2,shoe,True,con_par,4,val
+25239,fcbf0a9feb074b56ca5969843f33cd94.jpg,1024,683,1,5,5,"top, t-shirt, sweatshirt",True,con_par,17,val
+32666,8cf43e5c54e4be756b9f495318f29cf2.jpg,768,1024,1,3,3,dress,True,con_par,6,val
+29252,8f797084c71aedd4c8a1634c5ad4bad8.jpg,683,1024,1,5,4,shoe,True,con_par,7,val
+38905,affcfc2daa5d461750fbc7f11030080c.jpg,1024,1024,1,1,1,"top, t-shirt, sweatshirt",False,una_principal,4,val
+12427,0d21c4ba5ee83e94255244d179b16705.jpg,682,1024,1,7,6,"tights, stockings",True,con_par,11,val
+17451,217a3f82eddc3c2b5e8163baac78c6d5.jpg,682,1024,1,3,2,shoe,True,con_par,4,val
+306,6fe4b4f15a0cb8e54e1d190d7d488a7d.jpg,683,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,3,val
+23657,08f46b9e49c4f0e38e9f72848de47996.jpg,683,1024,1,7,4,"top, t-shirt, sweatshirt",True,con_par,10,val
+21165,f7de4939e5ddbee9a7ea1efb5459bf74.jpg,632,1024,0,4,3,shoe,True,con_par,9,val
+5985,3b448cf402545e55a40a8bd5246c78d8.jpg,754,1024,1,2,2,dress,True,con_par,3,val
+9786,d0a11db0ca2b870708804d752ae4bd71.jpg,683,1024,1,4,3,shoe,True,con_par,5,val
+26548,f2a86f9c56055097606f97e5b58ec58f.jpg,682,1024,1,8,5,"tights, stockings",True,con_par,10,val
+10941,c99bb635773c9ada320ad293ff75b4f5.jpg,680,1024,0,6,5,shoe,True,con_par,15,val
+13939,349999efddc09884042368ca6aeffa4b.jpg,682,1024,1,6,4,pants,True,relleno,9,val
+42584,26b1960f31d86f2fbae5928bb980be59.jpg,601,1024,1,1,1,dress,False,una_principal,2,val
+21295,42746e68a9fd202dc2bd68af3100375f.jpg,683,1024,1,3,2,shoe,True,con_par,5,val
+33285,6716db44468b9aaf860c80100a379445.jpg,681,1024,1,5,4,shoe,True,con_par,17,val
+36296,8f01976842a845e96749dc911cdafd68.jpg,681,1024,1,5,4,shoe,True,con_par,8,val
+49973,af384dfa667c77471595d06ccad73490.jpg,681,1024,1,3,2,shoe,True,con_par,3,val
+42907,ce02c5c03b8d7945bd4f4dbb352bd5f7.jpg,681,1024,1,3,2,shoe,True,con_par,9,val
+40839,084c7ea91f71a6e0c763b40ef57c4d58.jpg,336,1024,1,1,1,dress,False,una_principal,2,val
+7290,68bbb544ca8ad8995abbfa47dc25b9f5.jpg,682,1024,1,2,2,dress,True,con_par,4,val
+36663,0d55e9741aa487cbfe25a309590cf342.jpg,683,1024,1,4,3,shoe,True,con_par,9,val
+13733,2db369cc5d91d7b7f8aea9742a3e8ecb.jpg,1024,682,0,2,2,"top, t-shirt, sweatshirt",True,con_par,5,val
+23230,60882e67e14bf91e4956ad60aafa671c.jpg,683,1024,1,6,4,"tights, stockings",True,con_par,7,val
+31854,71b0af6857f117ce688cc55919b65b9b.jpg,682,1024,1,6,5,shoe,True,con_par,9,val
+44879,06c3bbc34fdd4ad6981d5daf876c2c56.jpg,681,1024,1,6,5,shoe,True,con_par,10,val
+44428,3c26d1c6bbf3f8025537bcc5b207260c.jpg,677,1024,1,2,2,dress,True,relleno,4,val
+32739,1df244de7a26846307981cf9f30812d0.jpg,683,1024,1,3,2,"tights, stockings",True,con_par,6,val
+17045,06fd2d4f33917d7244897eb1aad28231.jpg,682,1024,1,5,5,"top, t-shirt, sweatshirt",True,con_par,12,val
+8556,ddfe062d3c6b76df6e7548fc9ace15b7.jpg,1024,662,1,7,5,shoe,True,con_par,9,val
+43569,c60e9fbc3694c34df787c045f9453e1a.jpg,683,1024,1,11,8,"tights, stockings",True,con_par,18,val
+5060,dfe0d601c0c34899dc082999249566ae.jpg,682,1024,1,1,1,dress,False,relleno,2,val
+35611,01ec7dc26b52c85b18d3f67ad1961c78.jpg,721,1024,1,5,5,"shirt, blouse",True,con_par,13,val
+45809,07bf892f416ee589ee7c3518f1b97cc0.jpg,682,1024,1,5,4,shoe,True,con_par,8,val
+47071,6238d526ac4b285153417f9c261f014c.jpg,678,1024,1,4,3,shoe,True,con_par,7,val
+41884,6f2c01c6f141fffc6d77e78ddae6e13c.jpg,761,1024,1,2,2,dress,True,relleno,5,val
+16550,38a3a60bb377f1a2043058fec25b3100.jpg,683,1024,1,4,3,shoe,True,con_par,10,val
+40567,dd4dc72c6cc513d7ac71c24d4ac17de3.jpg,1024,1024,1,1,1,coat,False,una_principal,4,val
+39927,ed2d29d41ceaf0486fecfde92200be86.jpg,683,1024,1,4,3,shoe,True,con_par,9,val
+17029,5d08918eb6abb37ef5f25fdcd9f16ca5.jpg,682,1024,1,2,2,jumpsuit,True,con_par,2,val
+10981,71aa6baa1da6f55330c4cdf14aa65e20.jpg,683,1024,1,4,3,shoe,True,con_par,7,val
+5272,ac24804ce4798b5e0d99d91fdbc71abd.jpg,613,1024,1,3,2,shoe,True,con_par,9,val
+19590,395ef30d55cbebe9f78ae520e382ea71.jpg,468,1024,1,4,3,shoe,True,con_par,5,val
+36027,cc6b618feabd15638daefc06f40d4a8a.jpg,768,1024,1,5,3,"tights, stockings",True,con_par,8,val
+31532,371e91f621c165734d17f0d6055702b3.jpg,681,1024,0,4,3,shoe,True,con_par,5,val
+30182,f6718b82804899d9f81b881b5cc6fe6b.jpg,768,1024,1,5,4,shoe,True,con_par,6,val
+18029,f756128dba5ebaf3674b6bc68e8e31c5.jpg,682,1024,1,6,5,shoe,True,con_par,8,val
+38082,c7dc4f9965747edbd2ab59031959ae47.jpg,590,1024,1,1,1,"top, t-shirt, sweatshirt",False,una_principal,2,val
+9995,507029b509079324e9e4d0f4bd749b31.jpg,489,1024,1,4,4,"top, t-shirt, sweatshirt",True,con_par,5,val
+10772,c8ce051c2a655f768ab15efc6503d307.jpg,682,1024,1,7,6,shoe,True,con_par,8,val
+28326,649b3af3dba067c753ded0da362670a5.jpg,621,1024,1,7,6,shoe,True,con_par,13,val
+39792,ee2467f0437bd3812406005ed4f59189.jpg,1024,682,1,1,1,dress,False,relleno,6,val
+2050,3a61a866bd521b70672d35acfc7602f4.jpg,683,1024,1,4,3,shoe,True,con_par,5,val
+31379,2cdd83f550efc84d1f73de225f10182a.jpg,682,1024,1,6,5,shoe,True,con_par,12,val
+7259,7879ba0caa47ba26b7b571a357373629.jpg,683,1024,0,1,1,jacket,False,una_principal,4,val
+1095,851272ca2859fee6e06bd6b4762a6146.jpg,1024,680,1,2,2,dress,True,con_par,3,val
+24223,6cb7f09eda9e2761627358f863ff1f98.jpg,684,1024,1,5,4,shoe,True,con_par,8,val
+3325,52b7d3a8b2abd5ed27a63a9ab1516f0c.jpg,683,1024,1,8,7,shoe,True,con_par,15,val
+11055,6037be505277f4028d3c65df5519a970.jpg,682,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,3,val
+48201,746b52f4361c55d41868cbd6ad174081.jpg,767,1024,1,2,2,dress,True,con_par,3,val
+6288,bec16ced3820445c62a58ec9ea809a97.jpg,1024,682,1,3,3,"top, t-shirt, sweatshirt",True,con_par,3,val
+43938,fe404b9f9c08216924e6f1cd9bc7c3f2.jpg,618,1024,1,3,2,"headband, head covering, hair accessory",True,con_par,3,val
+29959,ea40764ed5d647fe39a1fe99fee8d2c3.jpg,652,1024,1,1,1,jacket,False,una_principal,7,val
+13172,6e626ceca1a8fcbf9a4d5d2b3ce35f45.jpg,682,1024,1,5,4,shoe,True,con_par,7,val
+42991,f7c58449447bbe9df01ca346f3873b8b.jpg,683,1024,1,4,3,shoe,True,con_par,5,val
+27196,d71526c843c906e657c53a010da388ff.jpg,1024,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,9,val
+6374,1027bfe81034aef21572352f83f7aabc.jpg,682,1024,1,5,4,shoe,True,con_par,8,val
+39685,76b51fdb71d8c34a9aaff3b18f337f37.jpg,682,1024,1,4,3,shoe,True,con_par,5,val
+7187,fad608f62c78f5ffb5917a1c03df309d.jpg,632,1024,1,3,2,shoe,True,con_par,4,val
+6836,dde6daed530afd745256ad52f90d0ac9.jpg,682,1024,-1,3,3,"top, t-shirt, sweatshirt",True,con_par,6,val
+16618,ad20bae7ed2d462497116decce6cadd7.jpg,682,1024,1,4,3,shoe,True,con_par,12,val
+44668,c18774c012840c59a2ee987a9281bfac.jpg,682,1024,1,2,2,dress,True,con_par,5,val
+41559,f9325aeecdd0e0230b1a60c0e18ebd2e.jpg,842,1024,1,2,2,dress,True,con_par,4,val
+16627,175a40882b3da7babb7b52061550e8f3.jpg,683,1024,1,5,4,shoe,True,con_par,6,val
+49572,226f2a263aa4d02a158e7ebd4533131c.jpg,535,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,6,val
+32833,39358f7c9b8c2ac108c9ca9bbca3a305.jpg,576,1024,1,9,7,sock,True,con_par,15,val
+22234,f69e83acbde8a6dac7158423316972bf.jpg,1024,1024,1,4,3,shoe,True,con_par,7,val
+47097,1d86ea50d7988fbedc681df03425871b.jpg,768,1024,1,3,3,pants,True,con_par,6,val
+46013,29369ef37b94e2631829b5169b1fe5b0.jpg,767,1024,1,3,2,shoe,True,con_par,4,val
+43289,211ed9aa5547d6d7f17271ab9fcce78c.jpg,682,1024,1,3,3,pants,True,con_par,10,val
+44882,8ae852d3a466f50220a508abdb1fde84.jpg,649,1024,1,1,1,"top, t-shirt, sweatshirt",False,una_principal,4,val
+29291,4588b4d49954418d9e5ac3898b37fb1e.jpg,682,1024,1,6,5,shoe,True,con_par,13,val
+23748,065ff558e08f4207c394ccd4baa9695d.jpg,703,1024,1,3,3,"shirt, blouse",True,con_par,6,val
+27425,8d296d5a3cd515743a2cd64e6c043e4b.jpg,1024,1024,1,1,1,"top, t-shirt, sweatshirt",False,relleno,2,val
+24922,78044d55f4eeeea3fe78d820006c9244.jpg,682,1024,1,5,4,shoe,True,con_par,9,val
+2385,e443455fd3200ffad7d94efbceb12325.jpg,682,1024,1,6,5,shoe,True,con_par,11,val
+37957,9128d884a812e47d1f0514c381ce68b3.jpg,1024,680,1,6,5,shoe,True,con_par,8,val
+33933,2f5d3193badf99f2fe4a47eae7d488d9.jpg,682,1024,1,2,2,dress,True,con_par,5,val
+18849,1fd514da2db67c36b37fec9068630737.jpg,681,1024,1,9,6,glove,True,con_par,15,val
+16397,2afa931a8cb9eb8f793ff9d6f097d5fc.jpg,430,1024,1,2,2,dress,True,con_par,5,val
+8184,9661c27f3dcc31873ffb1fad037f8c41.jpg,633,1024,1,5,4,shoe,True,con_par,6,val
+8550,525751313efeed60d64ea034d2dda605.jpg,683,1024,1,5,4,shoe,True,con_par,8,val
+47825,b910d045cc93f25db6705e4e474daf55.jpg,1024,1024,1,4,3,shoe,True,con_par,8,val
+12362,ba4f5626a0caaae53ec8cbc645f405ea.jpg,683,1024,1,3,2,shoe,True,con_par,6,val
+28091,8ca0cc1b132e5dc530c2b473d26e0a07.jpg,723,1024,1,6,5,shoe,True,con_par,13,val
+8421,92149a37724255115c430dcd92c612b3.jpg,1024,682,1,4,3,shoe,True,con_par,4,val
+31416,ca74d5397e51d21e4d5de26f797d1458.jpg,682,1024,1,4,4,coat,True,con_par,8,val
+24200,dbf3ad71180925051711e1710be2ecdb.jpg,682,1024,1,3,2,shoe,True,con_par,4,val
+2354,eef9d6759142d8541722d2b62367c9b0.jpg,1024,682,0,3,3,"shirt, blouse",True,con_par,8,val
+10704,950a4de4fb5fe7bf00e058cddd7ce3f6.jpg,681,1024,1,2,2,dress,True,con_par,6,val
+31462,02d37d3dbb43790542416ca05f648a77.jpg,1024,1024,1,1,1,cardigan,False,una_principal,4,val
+5965,826d9b3438fefe09c958547ac91054e8.jpg,682,1024,1,7,6,shoe,True,con_par,11,val
+7700,abff9bb78bcfdbc6de26dd94dd244db8.jpg,1024,681,1,3,2,shoe,True,con_par,4,val
+5665,be0ae611eb439c8a0ec0a637874e068a.jpg,1024,766,1,4,3,"tights, stockings",True,con_par,5,val
+44419,f4b9c235e6b77169ac2bdca3d2993528.jpg,731,1024,1,4,3,shoe,True,con_par,5,val
+13714,6ee123a6b06db504678e9c608841a054.jpg,683,1024,1,3,3,dress,True,con_par,6,val
+48768,e7feaff23d4881f47011f7a26c335e1a.jpg,682,1024,1,4,3,shoe,True,con_par,7,val
+43781,4fed4a84da339890dbf4671e98581580.jpg,768,1024,1,3,3,sweater,True,con_par,6,val
+22982,7b75404acaecec012aca2e6215e816c9.jpg,1024,682,1,2,2,sweater,True,con_par,5,val
+34083,4f67778358e8d0549c70a6d67288ffc1.jpg,889,1024,1,2,2,"shirt, blouse",True,con_par,5,val
+34751,9588b2e61c158c8090fd5fe4fce55af9.jpg,769,1024,1,5,4,shoe,True,con_par,10,val
+44988,be393505c415df78192dcd06048fee52.jpg,768,1024,1,1,1,"shirt, blouse",False,una_principal,5,val
+13954,dc0076234fa7a5e559c1a512dbd1f160.jpg,681,1024,1,2,2,dress,True,con_par,4,val
+43964,5c947317a8ef5de23cac5dff97b62404.jpg,680,1024,1,5,4,shoe,True,con_par,6,val
+16371,e3454ddc37a1c597a33604421bd614e4.jpg,682,1024,1,1,1,dress,False,una_principal,2,val
+18963,83d355be07121dd3679dd818a7ef8788.jpg,1024,576,1,3,2,shoe,True,con_par,3,val
+17707,5c65b0b193423df496da3dfb9329fcd8.jpg,632,1024,1,5,4,shoe,True,con_par,8,val
+41332,9653c91f95a99eea79d8f015d44c1039.jpg,683,1024,1,2,2,dress,True,con_par,5,val
+2948,3279f91633a7a0f0c8a1e6655873e12b.jpg,680,1024,1,4,3,shoe,True,con_par,7,val
+50099,400284a4ad1a62eafd63260274c2d757.jpg,768,1024,1,1,1,shorts,False,una_principal,3,val
+45807,3401b9ba614578a96870d0f7eda66283.jpg,768,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,4,val
+19831,881232d9fc8c5e9065c5b8f3628a159d.jpg,1024,394,1,8,6,shoe,True,con_par,6,val
+8758,530136a040dfd5eb51c56c90c6f51b20.jpg,682,1024,0,7,5,sock,True,con_par,9,val
+26292,40c758e530592320a290d3e4a9c0e897.jpg,682,1024,1,1,1,dress,False,una_principal,4,val
+18580,8ef977996dc4fb49bc15ccdaf70508eb.jpg,1024,683,1,2,2,"top, t-shirt, sweatshirt",True,con_par,8,val
+39756,f2b94cf3ed384f590a7765fe757ba477.jpg,682,1024,1,4,4,"shirt, blouse",True,con_par,11,val
+26399,43d4dbae60a41c8f98907d9417786bdd.jpg,683,1024,1,3,2,shoe,True,con_par,4,val
+37612,9c56513a7645955a9e610b41a36709a4.jpg,683,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,3,val
+25803,556c946a138b6b4c521b7dfce83bce95.jpg,818,1024,1,1,1,sweater,False,una_principal,7,val
+25006,1ad09b33fe9c91160509c7a13fa9ada1.jpg,1024,682,0,8,6,sock,True,con_par,7,val
+23630,e54924bc8d14719567ee42bdd498ba75.jpg,690,1024,1,3,2,shoe,True,con_par,9,val
+39383,978793d8ffef309778e4c4a33ba24cca.jpg,1024,683,1,9,6,"top, t-shirt, sweatshirt",True,con_par,15,val
+22666,ee4ab34ec3f6e3e7bd10423c74c42d8d.jpg,1024,683,1,9,6,"tights, stockings",True,con_par,13,val
+33648,1482279533f0c13de617a05a07c2cfc5.jpg,773,1024,1,4,3,shoe,True,con_par,8,val
+46342,f6007f4d0e70875d2dea46f050f458f2.jpg,681,1024,1,5,5,"top, t-shirt, sweatshirt",True,con_par,11,val
+26338,6861973b40b938893f4981f261ff3d32.jpg,682,1024,1,3,3,dress,True,con_par,6,val
+30363,f88763f4b4d7b7d7120892314ba87c19.jpg,1024,1024,1,6,6,"shirt, blouse",True,con_par,15,val
+25187,6091eedf1f78811687ffde272bbd3abf.jpg,683,1024,0,6,5,shoe,True,con_par,12,val
+17461,6e5e759cd28bb63fd5a38a5ca8c4ff7e.jpg,814,1024,1,3,3,"shirt, blouse",True,con_par,9,val
+10214,38558f8b477ad1c7ada55dd6e1dcd73e.jpg,678,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,3,val
+19689,e551eb31411a3cc59e9554597af49481.jpg,680,1024,1,9,7,glove,True,con_par,14,val
+49428,0a8e0324ff3080fb844eb6878f2e5ea6.jpg,749,1024,1,2,2,pants,True,con_par,10,val
+30626,8a4c88d32294d545b1e63abd45b9d5e1.jpg,679,1024,1,4,3,shoe,True,con_par,8,val
+34757,e54d233280a8a93377a50b40db47dba4.jpg,768,1024,1,1,1,dress,False,una_principal,2,val
+16089,c01f7a160f003b6125f106fa7a75e76b.jpg,683,1024,1,3,2,"headband, head covering, hair accessory",True,con_par,4,val
+21574,c3c7735cf74958cc7fa0c8ff3199950e.jpg,606,1024,1,7,6,shoe,True,con_par,11,val
+41315,22c2e2942f458a543bb1c7d358259f32.jpg,1024,1024,1,3,2,shoe,True,con_par,4,val
+22266,d28b948e2fb079255d8842028fbb505d.jpg,663,1024,1,4,3,shoe,True,con_par,7,val
+18289,610a8d3c896a76eb2fdccfe0dc8510dd.jpg,682,1024,1,4,3,shoe,True,con_par,9,val
+38040,7fcad685c445eb2417d2d592e51370ae.jpg,682,1024,1,5,4,shoe,True,con_par,8,val
+24106,55f5955afcf7b368a0341c57b4485a87.jpg,684,1024,1,3,2,shoe,True,con_par,6,val
+47174,ab98814a05e5dba114cf4f54948a97c3.jpg,1024,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,8,val
+24187,083dd5b4e2c3ac9bb3013699008890ea.jpg,1024,682,1,3,3,"top, t-shirt, sweatshirt",True,con_par,4,val
+39191,5a67111c152f4a8bab87e1c09c984b4c.jpg,767,1024,1,1,1,dress,False,relleno,2,val
+9868,a9deeb7d68fa5dcf04eae016ff59a490.jpg,682,1024,1,4,3,shoe,True,con_par,6,val
+15705,495150973fe3a5c03f13a1cba5bebfa0.jpg,682,1024,1,4,3,shoe,True,con_par,5,val
+48020,fd95bfb464b55653925c66543d229896.jpg,642,1024,1,3,2,shoe,True,con_par,5,val
+50262,03d1952dad67b748e36f952e8a6dbcf2.jpg,1024,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,5,val
+28835,c135d57904f701e47e586a364814ab02.jpg,682,1024,1,5,4,shoe,True,con_par,18,val
+42905,3eb0b9e815b30447a01d8aed37e6eebc.jpg,1024,683,1,3,3,"top, t-shirt, sweatshirt",True,con_par,6,val
+45574,63a68faedf013edc7d77a9fc89c2beb9.jpg,356,1024,1,5,4,shoe,True,con_par,10,val
+28228,656d2cf403908a688c01cb645a560669.jpg,905,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,8,val
+14953,51dab2d578d56b6a0c6aa5907b242f73.jpg,676,1024,1,1,1,dress,False,una_principal,2,val
+5406,9ca8e4b19832dc10e347555ba4ac5280.jpg,683,1024,1,4,3,"tights, stockings",True,con_par,7,val
+21214,7dc2463b5e972a01b8c444ddba22cced.jpg,682,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,3,val
+49092,13516e301b237e50433b288ac6ade447.jpg,768,1024,1,2,2,dress,True,con_par,3,val
+31708,acfe486d4d4add661dd9748e5041d69f.jpg,638,1024,1,4,3,shoe,True,con_par,7,val
+43598,ee74aee91f00c7c6b4e57caf7c76ce3e.jpg,768,1024,1,3,2,shoe,True,con_par,5,val
+1137,ef09d235229612ce8f001f82158f7021.jpg,1024,682,1,5,4,shoe,True,con_par,5,val
+38036,5e63ba8c2a7a639da3b203be6fca8dfb.jpg,576,1024,1,5,4,shoe,True,con_par,10,val
+25078,aac09ba3e6bba987043d4a450b23dd04.jpg,739,1024,1,7,6,glove,True,con_par,12,val
+41067,bb6b5ceaf2260a70021fff77d7cd0ec5.jpg,682,1024,1,3,2,shoe,True,con_par,4,val
+39643,f44ab34eee7b8755971d4d97f16e2342.jpg,681,1024,1,5,4,shoe,True,con_par,8,val
+45218,9d2ca0680da7313752d88d93dfa106fb.jpg,1024,1024,1,4,4,"shirt, blouse",True,con_par,13,val
+8539,d3f76771c81fddded7369ee38c089620.jpg,1024,648,1,3,2,shoe,True,con_par,4,val
+45551,f29681e264ae6acd3634eac99da3e4a2.jpg,1024,682,1,2,2,dress,True,con_par,3,val
+34936,2df00ecc9ca82ba7dab2e05a1cc77b5d.jpg,784,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,10,val
+35221,ef6ad4218c22388cd156da215aee1616.jpg,612,1024,1,1,1,dress,False,una_principal,3,val
+232,17195df67f1f125bad9592bf22e5be02.jpg,768,1024,-1,5,4,shoe,True,con_par,7,val
+373,c7c0849a526d0c7afc7f1fdbe21d773c.jpg,682,1024,1,7,6,shoe,True,con_par,10,val
+7958,3079ede5663f15e7d4342fe960025fac.jpg,1024,682,0,2,2,"top, t-shirt, sweatshirt",True,con_par,7,val
+45896,29fec22ddb2281b4b0afbfe62b265f65.jpg,680,1024,1,4,3,shoe,True,con_par,9,val
+28137,1ade2fd1e540bc5a5412e98a4a770efc.jpg,682,1024,1,4,4,"top, t-shirt, sweatshirt",True,con_par,12,val
+40945,a630bc50ec375af4d98e38ae82cd9bb1.jpg,1024,682,1,3,3,"top, t-shirt, sweatshirt",True,con_par,6,val
+14624,26c0bd5190f9bf160a0b79c408840e11.jpg,682,1024,1,3,2,shoe,True,con_par,6,val
+34538,21e42c2e16a0850f9c1053d2cbd5b90a.jpg,768,1024,1,2,2,dress,True,con_par,5,val
+33662,5e5d7e78768832bdc53879c05e6fc836.jpg,1024,680,1,3,3,"top, t-shirt, sweatshirt",True,con_par,7,val
+5366,1ef3562043fbf45edf28ec8f92c2d5dc.jpg,633,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,4,val
+37618,2717f385a385c03cde5157a8f9bda120.jpg,1024,1024,1,4,3,shoe,True,con_par,5,val
+11181,a63815fa6bfebfee7ce111d578660219.jpg,682,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,9,val
+42050,8709667ac8d1837e6a9b598d09bcf7fd.jpg,682,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,9,val
+22423,70e07b0d0545c91ea826afd711423939.jpg,682,1024,0,2,2,dress,True,con_par,7,val
+30266,39288fa7d0b462cc1dbb06a9e8f8dd1f.jpg,768,1024,1,2,2,dress,True,con_par,9,val
+15195,a1b572932e4b865a90e631bb39d4eb3d.jpg,1024,682,0,6,5,shoe,True,relleno,11,val
+40274,252e1c19fdb80a5724bc2788c2c57732.jpg,682,1024,1,4,3,"shirt, blouse",True,con_par,10,val
+2323,d178928b715b49617a2b01d2af8cff64.jpg,682,1024,1,3,2,shoe,True,con_par,9,val
+12909,b619072ea99742c2470bc224c782c854.jpg,683,1024,1,4,3,shoe,True,con_par,7,val
+5705,3508c249679a0ee5fe28533c1c96c79e.jpg,1024,683,1,7,6,shoe,True,con_par,10,val
+3176,0bc318aa3f12c592002742e34077b79f.jpg,682,1024,1,3,3,jacket,True,con_par,7,val
+14241,407d83e2d27670608d919ece8acc6373.jpg,682,1024,0,13,6,"bag, wallet",True,con_par,18,val
+33427,7bca7a7efb109941c36efb36639724aa.jpg,768,1024,1,2,2,dress,True,con_par,3,val
+39091,633499c0a8bfb358d1ea67b5577f81be.jpg,1024,731,1,2,2,dress,True,con_par,3,val
+4783,dd9c1553be3382324ea1c2983e701e60.jpg,682,1024,1,2,2,dress,True,con_par,3,val
+37150,b77ac16279631f65cc7b6d428cc7c4b1.jpg,681,1024,1,3,2,shoe,True,relleno,8,val
+17193,5d37e9755aa44582dc3922d530e1d41d.jpg,682,1024,1,3,3,coat,True,con_par,5,val
+13174,6302f0d8e1a54af9c6736176e717742a.jpg,713,1024,0,2,2,"top, t-shirt, sweatshirt",True,con_par,5,val
+46480,6629cfc655cad68bec897010cd994581.jpg,678,1024,1,7,6,shoe,True,con_par,8,val
+29927,228887603570d42fc17a2b4290e55c4c.jpg,682,1024,1,2,2,dress,True,con_par,3,val
+15171,aa155bb0b44b599ba8216a4e11c04f13.jpg,682,1024,1,2,2,jumpsuit,True,con_par,4,val
+48636,210e7aa391ae1394c83ead0e511b329d.jpg,682,1024,1,6,5,shoe,True,con_par,13,val
+45908,2e94a7ac3f6e15751602ec4404fcd10b.jpg,682,1024,1,3,3,dress,True,relleno,5,val
+18286,85df4a890d56a7af009a42d9b1f39c3c.jpg,682,1024,1,4,3,shoe,True,con_par,5,val
+2778,b859e58bbaa4f7ed33b86a82db2929b3.jpg,745,1024,1,3,2,shoe,True,con_par,4,val
+23930,16365f1646ef8294fbc9101b9b33c096.jpg,1024,703,1,1,1,"top, t-shirt, sweatshirt",False,una_principal,4,val
+34381,4b184c67f0c323f7d49af85eac33708e.jpg,1024,1024,1,1,1,"shirt, blouse",False,relleno,5,val
+33166,d23b37a579c8e81bc3e8ad09e460a9bb.jpg,1024,1024,1,5,4,shoe,True,con_par,10,val
+19863,70d42ef556bbd14bc3f0cde7c6070c0e.jpg,1024,433,0,4,4,"top, t-shirt, sweatshirt",True,con_par,7,val
+9182,d640cc2aab60050c88c420cfa91e71b9.jpg,682,1024,1,5,4,shoe,True,con_par,8,val
+50203,2b5c2b68528034dffe0faf06cee1ec12.jpg,1024,819,1,8,6,"shirt, blouse",True,con_par,12,val
+20425,247ed4d5085ef05544269dd77342e135.jpg,1024,678,0,1,1,"shirt, blouse",False,relleno,5,val
+1862,eb135b4939e3602b0723097fc27a13f3.jpg,1024,682,1,6,5,shoe,True,con_par,8,val
+50495,0017af9f7fa8ce9e7558bb924cec324e.jpg,345,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,5,val
+42293,a2a58eadbbb043d0e3f68489debb9195.jpg,681,1024,1,4,3,shoe,True,con_par,5,val
+15885,63ac152b71da2492336cb81abb628261.jpg,682,1024,0,3,3,jacket,True,con_par,7,val
+24897,4ad72626cbdeadc351bae7e511599d39.jpg,680,1024,1,5,4,shoe,True,con_par,9,val
+21208,1eea386bfadc1b62e180f395a44f62a7.jpg,683,1024,1,6,4,sock,True,con_par,8,val
+6391,608e944bc7a7ffef375a98f6206837e6.jpg,680,1024,1,8,7,shoe,True,relleno,19,val
+44130,9c45fec2dac0b80cc84a1d9841761f9f.jpg,794,1024,1,1,1,"shirt, blouse",False,una_principal,6,val
+10861,0eee715bc89448ccd0d6b3471ddd86e0.jpg,682,1024,1,4,4,jacket,True,con_par,8,val
+28359,621e24cadcca2cbc8b927ec9eb8c83ca.jpg,683,1024,1,5,4,shoe,True,con_par,8,val
+294,329e2638a04990f852490d70dee8a6a6.jpg,683,1024,0,5,4,shoe,True,con_par,9,val
+33571,bbd23b75fc91dffe67976d4dad8b9f8f.jpg,731,1024,1,1,1,skirt,False,una_principal,1,val
+25016,3c9aebab18aa63eec876f4f2a18c4ddc.jpg,715,1024,1,7,6,shoe,True,con_par,8,val
+9167,d7c9fbb8038c078cd9b060d77559d6a6.jpg,681,1024,1,7,5,"tights, stockings",True,con_par,14,val
+7331,95c829a45c7cebddcf40568ed6f1e5c7.jpg,579,1024,1,4,3,shoe,True,con_par,9,val
+11998,f2b6d62dfbf6d656482c6c14d8fd859e.jpg,682,1024,0,3,3,"top, t-shirt, sweatshirt",True,con_par,15,val
+34054,981ce7bc97a385fa2657857e5720b2d7.jpg,1024,1024,0,1,1,jacket,False,relleno,7,val
+35287,6ea86bb823d3f1b2eaac49cdc0a02364.jpg,683,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,4,val
+38377,3aa111e4539961f0602632ff3440b2f8.jpg,1024,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,5,val
+43999,fde5a907d6eb6ec8052ab5cd11b3f37f.jpg,682,1024,1,9,7,"tights, stockings",True,con_par,11,val
+26982,3c7f05ada2268e6597f720866dce07e6.jpg,683,1024,1,5,4,shoe,True,con_par,11,val
+43180,55ecedffd8aab4fd49ba80caefa85ae7.jpg,767,1024,1,1,1,dress,False,una_principal,3,val
+4761,9a36b51ad5ae404ce4b542dd1229226a.jpg,683,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,4,val
+22019,79a1feb9fec97f7c1c15f97ea76f75ac.jpg,682,1024,1,8,6,glove,True,con_par,9,val
+1136,821a1deaca546a7348f1be2e76d45531.jpg,682,1024,1,6,4,"shirt, blouse",True,con_par,10,val
+18000,f79993ef98971b2f183641d15f1a18fc.jpg,682,1024,1,4,3,shoe,True,con_par,6,val
+46327,2a65bd014c64ff590aace689cd08238b.jpg,683,1024,1,2,2,dress,True,relleno,3,val
+49781,804cb7e9dc8ffd5e3cd4f8b307ad6dee.jpg,682,1024,1,5,5,"top, t-shirt, sweatshirt",True,con_par,9,val
+3952,a8fe657d6b9518ea87780b441751d72d.jpg,682,1024,1,3,2,shoe,True,relleno,4,val
+11176,49eca01de2b1f18852cc2fc25a879b2f.jpg,682,1024,0,5,4,shoe,True,con_par,9,val
+9370,6a5630d93e5432e65d0aee032d288e9b.jpg,682,1024,1,4,3,shoe,True,con_par,8,val
+3013,fb4627ae9ea893956d3fb169ccc9525c.jpg,1024,683,0,3,2,"top, t-shirt, sweatshirt",True,con_par,6,val
+34152,f47fca0a433b4d601ea35627c8442062.jpg,682,1024,1,8,6,"tights, stockings",True,con_par,11,val
+40582,196aa63a38e78c54e83180cced30a3dd.jpg,873,1024,1,1,1,"top, t-shirt, sweatshirt",False,una_principal,4,val
+24382,4e6883986a9f411ad5505b75d88d952e.jpg,682,1024,1,4,3,shoe,True,con_par,5,val
+40217,22c540ab0df5b22b6f18438af07771a6.jpg,539,1024,1,3,2,shoe,True,con_par,5,val
+26066,1ff78ee2dfd85980446ee01926fa7b52.jpg,1024,882,1,1,1,dress,False,una_principal,4,val
+9201,73221847708b8090fc55421413739cb2.jpg,1024,683,1,4,3,shoe,True,con_par,7,val
+1215,7e9ac494ee0916aae03090662b4be59c.jpg,682,1024,1,5,5,"shirt, blouse",True,con_par,17,val
+13441,94fd4a89b32664e3641f30dcbafafbbd.jpg,680,1024,1,3,2,shoe,True,con_par,5,val
+4839,d30bfc9dcb85f3092205de4f7a2e62b3.jpg,1024,682,-1,5,5,"shirt, blouse",True,con_par,9,val
+43251,e043ff565e5275824eead5ea07ad840e.jpg,682,1024,1,6,5,shoe,True,con_par,8,val
+44046,9380e176bd0e153fb6f50f44344445ae.jpg,682,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,4,val
+19409,744987cb27668b50a79ac9a06d4f2c55.jpg,682,1024,1,1,1,dress,False,una_principal,3,val
+35306,45f00e7874330144f2e17ae3450b53e8.jpg,1024,768,1,1,1,"shirt, blouse",False,una_principal,5,val
+29510,ec09d89338b80455bbfeb6f034534f64.jpg,681,1024,1,6,5,shoe,True,con_par,11,val
+33817,9a3f05ee8819260b7ec024d10101342c.jpg,682,1024,1,5,3,"tights, stockings",True,con_par,8,val
+19184,aff36b5b496d5b52556aa800cb27c0bb.jpg,682,1024,1,5,4,shoe,True,con_par,6,val
+43439,04dfa730536ea43b3fc5463509b897eb.jpg,683,1024,1,7,5,sock,True,con_par,10,val
+31782,bc7c0ec01989cbcb57ba48b7006071e0.jpg,681,1024,1,5,5,"shirt, blouse",True,con_par,12,val
+6284,bec34f0864bf6340df0a16e29bca75e1.jpg,819,1024,1,4,3,shoe,True,con_par,7,val
+33180,0807ccbdba0d658ec553d1b46a36a595.jpg,458,1024,1,4,3,shoe,True,con_par,5,val
+44329,af6b1e36dea4a2214be02f255482ec5b.jpg,1024,628,1,5,4,shoe,True,con_par,6,val
+45782,75c6d602d479d466434baf502037ca59.jpg,768,1024,1,2,2,dress,True,con_par,6,val
+39425,9b149e873ef4d770884caa2ec9629ada.jpg,682,1024,1,8,6,sock,True,con_par,11,val
+38766,d02d2f4a4a157013082fb60e657cc8b5.jpg,767,1024,1,1,1,dress,False,una_principal,3,val
+22016,622be5af23964826a3f7de446eda7849.jpg,1024,680,1,1,1,dress,False,una_principal,3,val
+16991,cb9a644e84c203620178e08c32580b92.jpg,681,1024,1,7,6,shoe,True,con_par,14,val
+20785,c00ad05ef44550eceb87907163676965.jpg,633,1024,1,4,3,shoe,True,con_par,5,val
+2468,00cd5bb501e031aeeeeb337fb3f5b6d8.jpg,683,1024,1,10,8,glove,True,con_par,14,val
+6812,3a89ffa021973f2fe0209ec26e008565.jpg,682,1024,0,3,3,"top, t-shirt, sweatshirt",True,con_par,11,val
+33820,954c60dbdb9f497f6a0c9e8f5de47c9c.jpg,682,1024,1,8,5,"shirt, blouse",True,con_par,16,val
+34110,40e501f2bdb0a900ff61e6f192a5a740.jpg,1024,682,1,4,3,shoe,True,relleno,6,val
+45895,20cd261a1b31e647547e358521a3d25c.jpg,683,1024,1,3,2,shoe,True,con_par,4,val
+31086,d0222b8101eb9302fa2a0183b3febeb1.jpg,611,1024,1,5,3,"headband, head covering, hair accessory",True,con_par,6,val
+41197,63582c1cddbe7a7853fcdac93238b08b.jpg,783,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,5,val
+9323,ab72bbd0dab5b2b414273d1bee2b10cf.jpg,1024,584,1,5,4,shoe,True,con_par,8,val
+27194,71a056e8783b685a6ac0c02580dc0ebf.jpg,1024,1024,1,1,1,"shirt, blouse",False,una_principal,3,val
+49886,5098d86d8183114df4b31a02a3c6e9a7.jpg,682,1024,1,4,4,"top, t-shirt, sweatshirt",True,con_par,10,val
+687,6800293b403e0fe022ff2536b18bd91f.jpg,683,1024,1,3,3,dress,True,con_par,4,val
+4243,bed86502928c54ffbc23781736d5b0f7.jpg,683,1024,1,6,5,shoe,True,con_par,10,val
+45186,3c662ab644e647b909bb6c51896a5e8e.jpg,612,1024,1,4,3,shoe,True,con_par,6,val
+23995,a1b15a5218ef6cbe9ec73e67d17591db.jpg,683,1024,1,2,2,dress,True,con_par,6,val
+17387,19de02f6b77d0d4e5dc4fe2966b7346b.jpg,747,1024,1,3,2,shoe,True,con_par,17,val
+18389,388147d5114a8d5afdef8fc1983ec9b5.jpg,683,1024,1,5,4,shoe,True,relleno,9,val
+40128,74d098d68f56f5f16d4e77ca715ceeff.jpg,766,1024,1,2,2,dress,True,con_par,3,val
+26065,4020fb643558d0a622f1e1a70b73d47a.jpg,1024,1024,1,1,1,sweater,False,una_principal,4,val
+37504,6bd5a1204b605ed872862de500cdba53.jpg,880,1024,1,1,1,jacket,False,una_principal,7,val
+36286,4c033caec7c6ca6e591754cbe55b59a4.jpg,682,1024,1,4,3,shoe,True,con_par,7,val
+38570,9c4dcf1eecca3adc3e2c357620914bc4.jpg,682,1024,1,7,6,shoe,True,con_par,12,val
+24665,92ef60b2bb5adf43cac22856da16ed22.jpg,682,1024,0,4,3,shoe,True,con_par,8,val
+529,32cde452622a2e9e12001cd5af234d80.jpg,632,1024,1,3,2,shoe,True,con_par,6,val
+4653,578a781f117d730f5e214bf73c0432f1.jpg,682,1024,1,7,6,shoe,True,con_par,13,val
+44146,987dd0ac3bc81fe82095ed728e28f627.jpg,783,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,8,val
+7169,cd7d2d5f5a5dcaaf6332bd77ef5c785c.jpg,632,1024,1,3,2,shoe,True,con_par,6,val
+41375,3db402c23cfa1615d0d3bd0e0a6a8282.jpg,768,1024,1,2,2,skirt,True,con_par,2,val
+4836,a8057b62f554e2e762a4cf2c5c28d1fb.jpg,672,1024,1,7,6,shoe,True,con_par,15,val
+25929,21b3a28708301413f2292ce6d9c18ff9.jpg,1024,768,1,5,5,"shirt, blouse",True,con_par,13,val
+5319,9266fe2056ce3793c243138748fab27e.jpg,1024,680,1,3,3,"top, t-shirt, sweatshirt",True,relleno,5,val
+4158,f586cee77aca882d592ea60bd298d1d3.jpg,745,1024,0,3,3,sweater,True,con_par,6,val
+26360,17a6a549532cff8bb98b0c146a2a9c7a.jpg,683,1024,1,4,3,shoe,True,con_par,9,val
+7623,54f8d0b2da421f121b05b5161f650aef.jpg,682,1024,1,2,2,jacket,True,con_par,5,val
+43023,ed1365107f87d7fe617558e500443e27.jpg,783,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,8,val
+15008,92080c0ec2a711a1d22a3e5f983e326c.jpg,683,1024,1,6,4,shoe,True,con_par,9,val
+41088,15b05550ab20703851527e4705566440.jpg,682,1024,1,6,5,shoe,True,con_par,13,val
+28340,4e0da98feac16f348e6c12657625dbfc.jpg,680,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,12,val
+30149,f4bbe7f5bac88fc8e5af22f77a40d86a.jpg,1024,682,1,2,2,"top, t-shirt, sweatshirt",True,con_par,4,val
+31887,b04b67c8bf56ecb23bd34571a3d19c25.jpg,1024,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,7,val
+11971,b99994e1871ab2ae5110a64a21274986.jpg,682,1024,1,3,2,shoe,True,con_par,4,val
+26201,e334bf439860f48e13761ee768d69ffa.jpg,682,1024,1,1,1,dress,False,una_principal,2,val
+46786,41b8e18c24ad0d43d6c6305ee9c2af21.jpg,682,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,6,val
+46626,709ed846a0d68a6e043e89cbe81f9a1c.jpg,768,1024,1,1,1,jacket,False,una_principal,7,val
+24754,a6e97d0a8b69396e1fa82aed8b40a309.jpg,576,1024,1,5,4,shoe,True,con_par,9,val
+13631,129266d19993aa1fbd458404f1a37d47.jpg,682,1024,0,3,3,"top, t-shirt, sweatshirt",True,con_par,6,val
+41589,5ca17122f80c374627c55462e3dc5333.jpg,682,1024,1,4,3,"tights, stockings",True,con_par,8,val
+23637,e856b2e30e3f558ab6f74f43528084a3.jpg,682,1024,1,3,3,dress,True,con_par,9,val
+25822,8ce833e81df2e137513acfe00ea833d6.jpg,651,1024,1,7,5,belt,True,con_par,21,val
+18273,ceea006d5b4892310ed8c9372aa2518a.jpg,683,1024,1,8,6,"tights, stockings",True,con_par,13,val
+22837,f982d38c74814b761b0d69836198f46e.jpg,682,1024,1,5,4,shoe,True,con_par,8,val
+39583,14335ec39fc131f8c749e31f199ad271.jpg,682,1024,1,1,1,dress,False,relleno,2,val
+4916,d781762fd595c3b090eaaecbfc2a8a8e.jpg,680,1024,1,2,2,dress,True,con_par,4,val
+50165,96c44a49938b7d6a62eb229d63fcb58d.jpg,1024,1024,1,3,3,jacket,True,con_par,7,val
+39398,8357276d4d66d27209b67e9da2c033e4.jpg,682,1024,1,8,6,sock,True,con_par,16,val
+7943,875d8ede5dc6614c21bab984ee40529f.jpg,686,1024,1,5,5,coat,True,con_par,12,val
+11615,ff841218be6aa6b38940705b7c522593.jpg,1024,768,1,4,3,shoe,True,con_par,6,val
+41102,83e05ee65335e1fbae9fcbce9461a728.jpg,460,1024,1,3,3,"top, t-shirt, sweatshirt",True,con_par,4,val
+26403,82818617d070e1af5c0cb532ae97482e.jpg,1024,1024,1,1,1,dress,False,una_principal,7,val
+15911,5c4af128e178a759ccc28961ef97bc21.jpg,724,1024,1,5,4,shoe,True,con_par,8,val
+49195,70f578e64c26ba43ebd14f8bbbeb91e6.jpg,682,1024,1,3,2,shoe,True,con_par,6,val
+11929,b62b69e7eae7537972a605bd9ff6cecd.jpg,763,1024,1,1,1,dress,False,una_principal,4,val
+3360,ae6cae000cf1df5381100b983e786332.jpg,632,1024,1,5,4,shoe,True,con_par,11,val
+6271,a62dd2ea001e7e6f46d1027d98683e19.jpg,632,1024,1,3,2,shoe,True,con_par,6,val
+27060,3adbfe595b3f7ea35ff1158bba42e849.jpg,1024,768,1,3,3,"top, t-shirt, sweatshirt",True,con_par,6,val
+35984,4eb971094109ee6dae86ef08924a7b31.jpg,682,1024,1,4,3,shoe,True,con_par,7,val
+2812,6c5461e1eadd0d54806cbdc901ff52c5.jpg,682,1024,1,8,6,sock,True,relleno,16,val
+2280,70b12a8964babdb5c1e74646865c888e.jpg,682,1024,1,4,3,shoe,True,con_par,6,val
+16536,d253bdaee987b1398cb4154596446ad6.jpg,682,1024,1,4,3,shoe,True,con_par,6,val
+37279,3d518776d99587f0876acc64f564b81f.jpg,683,1024,1,4,4,"shirt, blouse",True,con_par,11,val
+36919,1c8f9dc36318fe9e8e07ff23bed564b9.jpg,745,1024,1,3,2,shoe,True,con_par,4,val
+1281,ed9159f47254eac21ff1ffa1fded164f.jpg,622,1024,1,5,4,shoe,True,con_par,6,val
+49681,2299df83452c1e16eae4392690981c4c.jpg,683,1024,1,4,4,"shirt, blouse",True,con_par,18,val
+26816,7e4187a1cb5ef3ff93aaf8f902dbecb1.jpg,682,1024,1,2,2,dress,True,con_par,3,val
+9534,415b9d1b8d74e0d15d22e8c24ae974b9.jpg,679,1024,1,5,4,shoe,True,con_par,8,val
+16138,0cb795d6ea1cb74611e6bb4dc64fee15.jpg,682,1024,1,2,2,dress,True,con_par,4,val
+27995,3323011d78a243df8018a9bb14fb0987.jpg,683,1024,1,5,4,shoe,True,con_par,6,val
+7842,a0b8b097b635dd19603a5f934eb6659a.jpg,681,1024,1,5,4,shoe,True,con_par,8,val
+19705,1d06a4013ea87aa2bb005266b473a7ca.jpg,1024,1024,1,7,6,shoe,True,con_par,8,val
+14862,fdc4ef5e8965008de3510becd4c73dee.jpg,1024,638,0,5,3,"top, t-shirt, sweatshirt",True,con_par,8,val
+3499,078757c423887cabbcfc689ff1aea189.jpg,1024,682,0,2,2,"top, t-shirt, sweatshirt",True,con_par,5,val
+37481,5682ddff71f1ecf6009cba43366f883a.jpg,1024,1024,1,3,2,shoe,True,con_par,4,val
+15595,20d6ca5e17e250e77f653f78e5c53cfb.jpg,1024,678,1,2,2,"top, t-shirt, sweatshirt",True,con_par,4,val
+9531,73ccecd2ff27aec572c29d85a476654e.jpg,683,1024,1,4,3,shoe,True,con_par,8,val
+48600,3b346891ceb574228794425eef48b10f.jpg,682,1024,1,6,5,shoe,True,con_par,10,val
+44741,2fc22cc9e960202c2d7895cc82c7f77e.jpg,731,1024,1,1,1,dress,False,relleno,3,val
+27784,52577e808c5eebeeabca949534b2c7ff.jpg,574,1024,1,1,1,cardigan,False,una_principal,4,val
+49046,bc77fb7bdee5f6e6d89c2f5ad0842520.jpg,768,1024,1,1,1,"top, t-shirt, sweatshirt",False,una_principal,2,val
+5503,1ceb9145469ed671088a9c6c041c329f.jpg,681,1024,1,6,4,sock,True,con_par,7,val
+24947,40ae3d4b06235b8f6992ba9aecd28657.jpg,633,1024,1,3,2,shoe,True,con_par,4,val
+11009,b8869f2ba97f30904e831355580e68d7.jpg,682,1024,1,2,2,dress,True,con_par,3,val
+25009,93a6ea9f4f35c9d3cf2d48c689d8be62.jpg,633,1024,0,6,5,shoe,True,con_par,16,val
+13880,4b6535865ead41a1a113f0072ec0e859.jpg,682,1024,1,3,2,shoe,True,con_par,5,val
+32380,0b757b31f15a5bb9536ab543a0346e66.jpg,681,1024,1,1,1,dress,False,una_principal,7,val
+47960,b0f84d75618fe285bd1655570452f458.jpg,1024,683,1,1,1,dress,False,una_principal,5,val
+21046,8ea063530ada3899547b6118076a9e6c.jpg,683,1024,1,3,2,shoe,True,con_par,4,val
+15130,1762c95dc8b71655e7de60eb33694c64.jpg,683,1024,1,2,2,"top, t-shirt, sweatshirt",True,con_par,5,val
+48792,cb8ed6368e1e3796c0eb65b4edcfe1a8.jpg,682,1024,1,6,5,"tights, stockings",True,con_par,12,val
+9820,73c16ddcb5a548f6b891d5a3e86d3a75.jpg,682,1024,1,3,2,shoe,True,con_par,4,val
+43765,a08f6fbd699a0ca2abcd1cd0bcf884f1.jpg,1024,1024,1,1,1,"top, t-shirt, sweatshirt",False,una_principal,4,val
+8650,385891fca5868b773a6cde7a458f3450.jpg,682,1024,1,5,4,shoe,True,con_par,10,val
+4827,31683058657c62a58ca0f3a5b15b7b39.jpg,678,1024,1,5,4,shoe,True,con_par,6,val
+15765,521f9b4228e4180052443759fc5c5f40.jpg,1024,683,1,6,5,shoe,True,con_par,10,val
+1657,4ccfdfea4055cd9c64293c7b3d6d823f.jpg,1024,683,1,4,3,shoe,True,con_par,7,val
+14123,cb3ef212da666b301c56e1696e5e6c82.jpg,680,1024,1,5,4,shoe,True,con_par,10,val
+16949,990834337bc4b70e601e08874f124f33.jpg,1024,731,1,1,1,"top, t-shirt, sweatshirt",False,una_principal,4,val
+50373,c6e5026f84fd07833bdcb08adafa416e.jpg,636,1024,1,1,1,dress,False,relleno,4,val
+23368,0de94c4b7ba4a3a1db42458bf1497628.jpg,682,1024,0,1,1,"shirt, blouse",False,una_principal,7,val
+48113,47531eaa8ed80d2abcf1b64331fdb0bb.jpg,819,1024,1,1,1,sweater,False,una_principal,19,val
+30794,3c0af2bb489ee192133dce4b04eebb18.jpg,682,1024,1,6,6,"top, t-shirt, sweatshirt",True,con_par,13,val
+23388,c7aede2bc22032b4479d4ebc790fb407.jpg,682,1024,1,1,1,dress,False,una_principal,2,val
+12675,087072796ba83ec2a9a34e80590da2f3.jpg,682,1024,0,5,4,shoe,True,con_par,7,val
+22988,6b507e3142c1d0c8c31b8d6ff99aef00.jpg,684,1024,1,5,3,"tights, stockings",True,con_par,8,val
+49212,14268790b943b8ad6436e7cd418135a3.jpg,682,1024,1,4,3,shoe,True,con_par,7,val
+24453,397f711e74168b132546fe1c5b22d213.jpg,1024,682,1,1,1,dress,False,una_principal,3,val
+45639,4bc50a430d0db5c3444bf78d699762ba.jpg,682,1024,1,9,7,"tights, stockings",True,con_par,15,val
+35412,f3dc5bec428b6ce438ba698ff35a74d9.jpg,767,1024,1,3,2,shoe,True,con_par,6,val

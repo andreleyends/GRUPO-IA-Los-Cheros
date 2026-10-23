@@ -1,0 +1,54 @@
+COMO SE ENTRENO LA CNN
+======================
+
+Archivo principal:
+
+- 4_1_entrenar_cnn.py
+- config.py
+- garmentnet.pt
+- 4_1_cnn_metricas.json
+- 4_1_curvas.png
+- 4_1_matriz_confusion.png
+
+Datos de entrada:
+
+- data/processed/instancias_split.csv
+- data/processed/recortes_144.npy
+
+Configuracion:
+
+- Imagen: 144x144
+- Batch: 64
+- Epocas maximas: 15
+- Optimizador: AdamW, learning rate 0.001
+- Scheduler: CosineAnnealingLR
+- Precision: AMP fp16
+- Early stopping: paciencia 5
+- GPU: RTX 4050 Laptop, 6 GB
+- Duracion: 4,85 min
+- Mejor epoca: 15
+
+Comando real, ejecutado desde la raiz del proyecto original sprint2:
+
+  cd "H:\Nueva carpeta\escritorio\ROPA IA PROYECTO\sprint2"
+  .\.venv\Scripts\python.exe -u -X utf8 src\4_1_entrenar_cnn.py
+
+Importante
+----------
+El script copiado en esta carpeta es para mostrar el codigo. Para ejecutarlo
+se usa la copia original dentro de sprint2, porque necesita src/, data/ y
+.venv/.
+
+Puntos del codigo:
+
+- 4_1_entrenar_cnn.py:88  -> lee instancias_split.csv
+- 4_1_entrenar_cnn.py:95  -> carga recortes_144.npy
+- 4_1_entrenar_cnn.py:153 -> guarda models/garmentnet.pt
+- 4_1_entrenar_cnn.py:175 -> guarda 4_1_cnn_metricas.json
+
+Resultado en test:
+
+- Accuracy top-1: 0,624
+- Accuracy top-3: 0,806
+- Macro F1: 0,321
+- Weighted F1: 0,615

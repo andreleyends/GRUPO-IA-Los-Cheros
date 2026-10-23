@@ -1,0 +1,28 @@
+{
+  "fecha": "2026-10-23 11:02:47",
+  "escenario": "B_4000_imagenes",
+  "positivos": 24861,
+  "negativos": 49462,
+  "sinteticos_apoyo": 130,
+  "ratio_neg_pos": 1.99,
+  "por_split": {
+    "0": {
+      "test": 5016,
+      "train": 39212,
+      "val": 5234
+    },
+    "1": {
+      "test": 2508,
+      "train": 19736,
+      "val": 2617
+    }
+  },
+  "por_origen": {
+    "negativo_aleatorio": 34681,
+    "coocurrencia": 24731,
+    "negativo_dificil": 14781,
+    "sintetico_apoyo": 130
+  },
+  "pares_unicos_categoria": 357,
+  "duracion_min": 0.13
+}

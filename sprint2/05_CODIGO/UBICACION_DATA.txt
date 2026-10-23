@@ -1,0 +1,18 @@
+UBICACION DE LOS DATOS COMPLETOS
+================================
+
+Datos procesados:
+
+H:\Nueva carpeta\escritorio\ROPA IA PROYECTO\sprint2\data\processed
+
+Dataset original:
+
+H:\Nueva carpeta\escritorio\ROPA IA PROYECTO\sprint1\datos
+
+Archivos pesados que NO se copiaron:
+
+- data/processed/recortes_144.npy  -> 1,7 GB
+- sprint1/datos/raw/train2020.zip   -> 3,2 GB
+- sprint1/datos/raw/instances_attributes_train2020.json -> 517 MB
+
+En esta carpeta de respaldo estan reports, scrum, src y models, pero no data.

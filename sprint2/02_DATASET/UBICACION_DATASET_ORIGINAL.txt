@@ -1,0 +1,22 @@
+UBICACION DEL DATASET ORIGINAL
+==============================
+
+Dataset original de Fashionpedia:
+
+H:\Nueva carpeta\escritorio\ROPA IA PROYECTO\sprint1\datos\raw
+H:\Nueva carpeta\escritorio\ROPA IA PROYECTO\sprint1\datos\imagenes\train
+H:\Nueva carpeta\escritorio\ROPA IA PROYECTO\sprint1\datos\imagenes\test
+
+Archivos principales:
+
+- instances_attributes_train2020.json  -> 517 MB, anotaciones de train
+- train2020.zip                       -> 3,2 GB, imagenes originales
+- atributos y anotaciones de validacion
+
+Imagenes disponibles:
+
+- train: 45.623 imagenes
+- test:   3.200 imagenes
+
+El dataset completo NO se copia en esta presentacion por su tamano.
+Aqui solo se incluye la muestra limpia de 4.000 imagenes y sus derivados.
