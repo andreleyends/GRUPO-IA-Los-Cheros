@@ -1,0 +1,35 @@
+DATASET LIMPIO - QUE MOSTRAR
+============================
+
+Archivos de esta carpeta:
+
+- imagenes_subset.csv
+  4.000 imagenes seleccionadas de Fashionpedia.
+
+- instancias_limpias.csv
+  28.565 instancias validadas, antes de separar train/val/test.
+
+- instancias_split.csv
+  Las mismas instancias con la columna split. Es el archivo que usa el
+  entrenamiento de la CNN.
+
+- 3_1_resumen.json
+  Resumen reproducible: 4.199 candidatas, 4.000 finales, 28.565 instancias,
+  333.401 anotaciones leidas y filtros aplicados.
+
+- 3_1_recortes.png
+  Montaje visual de recortes de 144x144.
+
+- 3_1_categorias.png
+  Distribucion de categorias.
+
+Que decir
+---------
+"El dataset limpio no es una carpeta con 4.000 JPG nuevos. Son las 4.000
+imagenes seleccionadas en imagenes_subset.csv, las 28.565 instancias
+validadas en instancias_limpias.csv y los recortes de 144x144 guardados en
+un memmap de 1,7 GB llamado recortes_144.npy."
+
+El memmap y el dataset original quedan en la carpeta tecnica original; no se
+copian aqui por tamano. La ruta del dataset original esta en
+UBICACION_DATASET_ORIGINAL.txt.

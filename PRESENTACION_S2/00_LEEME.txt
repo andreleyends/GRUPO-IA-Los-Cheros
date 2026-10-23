@@ -1,0 +1,46 @@
+STYLEMATE - SPRINT 2 - PRESENTACION
+===================================
+
+Abre esta carpeta y sigue este orden. No necesitas entrar a las carpetas
+tecnicas del proyecto original.
+
+1. 01_ENTREGABLES
+   Los 13 documentos finales en Word. Es lo que se entrega.
+
+2. 02_DATASET
+   Aqui estan el dataset limpio, los splits, el resumen y las figuras.
+   El dataset original se muestra desde la ruta indicada en
+   UBICACION_DATASET_ORIGINAL.txt.
+
+3. 03_ENTRENAMIENTO
+   Script de entrenamiento, configuracion, modelo .pt, metricas y curvas.
+
+4. 04_RESULTADOS
+   Metricas consolidadas y ablacion.
+
+5. 05_RESPALDO
+   Copia de reports, scrum, src, models y documentacion tecnica.
+   Usalo solo si el ingeniero pide ver el proyecto completo.
+
+QUE NO ABRIR
+------------
+- .venv
+- __pycache__
+- data/cache
+- recortes_144.npy (archivo binario de 1,7 GB)
+
+FRASES UTILES
+-------------
+- "El dataset original esta en sprint1/datos; de ahi se seleccionaron 4.000
+  imagenes para el Sprint 2."
+- "El dataset limpio esta en 02_DATASET: 4.000 imagenes seleccionadas y 28.565
+  instancias validadas."
+- "El entrenamiento esta en 03_ENTRENAMIENTO: script, configuracion, modelo y
+  metricas."
+- "Los documentos de 01_ENTREGABLES son la version final; los .md de reports y
+  scrum son las fuentes editables."
+
+NOTA
+----
+Este paquete no incluye el dataset pesado ni el entorno virtual. Para ejecutar
+el pipeline completo se usa la carpeta original sprint2 en esta misma laptop.

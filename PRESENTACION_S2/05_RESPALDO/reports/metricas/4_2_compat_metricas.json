@@ -1,0 +1,43 @@
+{
+  "auc": 0.8661491759066362,
+  "ap": 0.7260458137132598,
+  "accuracy": 0.7680754917597022,
+  "f1": 0.7050870373500084,
+  "precision": 0.6119096509240246,
+  "recall": 0.8317384370015949,
+  "n": 7524,
+  "por_origen": {
+    "coocurrencia": {
+      "auc": null,
+      "ap": null,
+      "accuracy": 0.8317384370015949,
+      "f1": 0.9081410535481063,
+      "precision": 1.0,
+      "recall": 0.8317384370015949,
+      "n": 2508,
+      "score_medio": 0.7053075432777405
+    },
+    "negativo_aleatorio": {
+      "auc": null,
+      "ap": null,
+      "accuracy": 0.886896152733584,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "n": 3457,
+      "score_medio": 0.11026233434677124
+    },
+    "negativo_dificil": {
+      "auc": null,
+      "ap": null,
+      "accuracy": 0.4021808851828095,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "n": 1559,
+      "score_medio": 0.5199875831604004
+    }
+  },
+  "mejor_epoch": 12,
+  "duracion_min": 0.7
+}

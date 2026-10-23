@@ -1,0 +1,4 @@
+split,imagenes,instancias,principales,partes,con_atributos,pares_positivos
+train,3204,22825,11707,11118,14551,19606
+val,398,2899,1501,1398,1781,2617
+test,398,2841,1462,1379,1782,2508

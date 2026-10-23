@@ -1,0 +1,331 @@
+{
+  "dataset": {
+    "fecha": "2026-10-23 11:01:15",
+    "escenario": "B_4000_imagenes",
+    "semilla": 42,
+    "imagenes_candidatas": 4199,
+    "imagenes_finales": 4000,
+    "instancias_finales": 28565,
+    "instancias_principales": 14670,
+    "instancias_partes": 13895,
+    "con_atributos": 18114,
+    "pct_con_atributos": 63.4132679852967,
+    "imagenes_con_par": 3365,
+    "anotaciones_finales": 28565,
+    "faltantes_imagen": 0,
+    "errores_color": 0,
+    "filtros": {
+      "seleccionadas": 31670,
+      "area_pequena": 1395,
+      "bbox_invalida": 255
+    },
+    "total_leidas": 333401,
+    "categorias": 46,
+    "duracion_min": 3.09
+  },
+  "pares": {
+    "fecha": "2026-10-23 11:02:47",
+    "escenario": "B_4000_imagenes",
+    "positivos": 24861,
+    "negativos": 49462,
+    "sinteticos_apoyo": 130,
+    "ratio_neg_pos": 1.99,
+    "por_split": {
+      "0": {
+        "test": 5016,
+        "train": 39212,
+        "val": 5234
+      },
+      "1": {
+        "test": 2508,
+        "train": 19736,
+        "val": 2617
+      }
+    },
+    "por_origen": {
+      "negativo_aleatorio": 34681,
+      "coocurrencia": 24731,
+      "negativo_dificil": 14781,
+      "sintetico_apoyo": 130
+    },
+    "pares_unicos_categoria": 357,
+    "duracion_min": 0.13
+  },
+  "particiones": [
+    {
+      "split": "train",
+      "imagenes": 3204,
+      "instancias": 22825,
+      "principales": 11707,
+      "partes": 11118,
+      "con_atributos": 14551,
+      "pares_positivos": 19606
+    },
+    {
+      "split": "val",
+      "imagenes": 398,
+      "instancias": 2899,
+      "principales": 1501,
+      "partes": 1398,
+      "con_atributos": 1781,
+      "pares_positivos": 2617
+    },
+    {
+      "split": "test",
+      "imagenes": 398,
+      "instancias": 2841,
+      "principales": 1462,
+      "partes": 1379,
+      "con_atributos": 1782,
+      "pares_positivos": 2508
+    }
+  ],
+  "cnn": {
+    "loss": 2.8735220273335775,
+    "accuracy": 0.6244280183034143,
+    "macro_f1": 0.32070043337630555,
+    "weighted_f1": 0.6147216869482693,
+    "top3": 0.8060542062653995,
+    "n": 2841,
+    "acc_silueta": 0.4849445324881141,
+    "f1_silueta": 0.1462559444505817,
+    "acc_patron": 0.8278688524590164,
+    "f1_patron": 0.22386730900538657,
+    "acc_largo": 0.5979381443298969,
+    "f1_largo": 0.48729353818250204,
+    "acc_detalle": 0.6993670886075949,
+    "f1_detalle": 0.4121120554390348,
+    "mejor_epoch": 15,
+    "parametros": 1805064,
+    "duracion_min": 4.85
+  },
+  "compat": {
+    "auc": 0.8661491759066362,
+    "ap": 0.7260458137132598,
+    "accuracy": 0.7680754917597022,
+    "f1": 0.7050870373500084,
+    "precision": 0.6119096509240246,
+    "recall": 0.8317384370015949,
+    "n": 7524,
+    "por_origen": {
+      "coocurrencia": {
+        "auc": null,
+        "ap": null,
+        "accuracy": 0.8317384370015949,
+        "f1": 0.9081410535481063,
+        "precision": 1.0,
+        "recall": 0.8317384370015949,
+        "n": 2508,
+        "score_medio": 0.7053075432777405
+      },
+      "negativo_aleatorio": {
+        "auc": null,
+        "ap": null,
+        "accuracy": 0.886896152733584,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "n": 3457,
+        "score_medio": 0.11026233434677124
+      },
+      "negativo_dificil": {
+        "auc": null,
+        "ap": null,
+        "accuracy": 0.4021808851828095,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "n": 1559,
+        "score_medio": 0.5199875831604004
+      }
+    },
+    "mejor_epoch": 12,
+    "duracion_min": 0.7
+  },
+  "taste": {
+    "auc": 1.0,
+    "ap": 1.0,
+    "accuracy": 0.9998666666666667,
+    "f1": 0.9998666488865182,
+    "n": 15000,
+    "mejor_epoch": 2,
+    "n_perfiles": 30,
+    "ranking": {
+      "compat": {
+        "ndcg10": 0.07041623253700534,
+        "hr10": 0.4,
+        "mrr10": 0.14333333333333334
+      },
+      "afinidad": {
+        "ndcg10": 1.0,
+        "hr10": 1.0,
+        "mrr10": 1.0
+      },
+      "taste": {
+        "ndcg10": 0.9639283116067965,
+        "hr10": 1.0,
+        "mrr10": 1.0
+      },
+      "taste_reglas": {
+        "ndcg10": 0.9610801635269144,
+        "hr10": 1.0,
+        "mrr10": 1.0
+      },
+      "violacion_reglas_top10_taste": 0.10000000000000002,
+      "violacion_reglas_top10_final": 0.0
+    },
+    "duracion_min": 0.21
+  },
+  "tabla": [
+    [
+      "Datos",
+      "Imagenes del subconjunto",
+      "4,000",
+      ""
+    ],
+    [
+      "Datos",
+      "Instancias",
+      "28,565",
+      ""
+    ],
+    [
+      "Datos",
+      "Instancias principales",
+      "14,670",
+      ""
+    ],
+    [
+      "Datos",
+      "Partes",
+      "13,895",
+      ""
+    ],
+    [
+      "Datos",
+      "Instancias con atributos",
+      "18,114",
+      "63.4%"
+    ],
+    [
+      "Pares",
+      "Positivos (incluye sinteticos)",
+      "24,861",
+      ""
+    ],
+    [
+      "Pares",
+      "Negativos",
+      "49,462",
+      ""
+    ],
+    [
+      "Pares",
+      "Sinteticos de apoyo",
+      "130",
+      ""
+    ],
+    [
+      "CNN",
+      "Accuracy top-1",
+      "0.624",
+      ""
+    ],
+    [
+      "CNN",
+      "Accuracy top-3",
+      "0.806",
+      ""
+    ],
+    [
+      "CNN",
+      "Macro F1",
+      "0.321",
+      ""
+    ],
+    [
+      "CNN",
+      "Weighted F1",
+      "0.615",
+      ""
+    ],
+    [
+      "CNN",
+      "Silueta (accuracy)",
+      "0.485",
+      ""
+    ],
+    [
+      "CNN",
+      "Patron (accuracy)",
+      "0.828",
+      ""
+    ],
+    [
+      "CNN",
+      "Largo (accuracy)",
+      "0.598",
+      ""
+    ],
+    [
+      "CNN",
+      "Detalle (accuracy)",
+      "0.699",
+      ""
+    ],
+    [
+      "Compatibilidad",
+      "AUC test",
+      "0.866",
+      ""
+    ],
+    [
+      "Compatibilidad",
+      "AP test",
+      "0.726",
+      ""
+    ],
+    [
+      "Compatibilidad",
+      "Accuracy test",
+      "0.768",
+      ""
+    ],
+    [
+      "Compatibilidad",
+      "F1 test",
+      "0.705",
+      ""
+    ],
+    [
+      "Taste",
+      "AUC preferencias test",
+      "1.000",
+      "sintetico"
+    ],
+    [
+      "Taste",
+      "NDCG@10",
+      "0.964",
+      "30 perfiles"
+    ],
+    [
+      "Taste + reglas",
+      "NDCG@10",
+      "0.961",
+      "30 perfiles"
+    ],
+    [
+      "Reglas",
+      "Violacion top-10 sin reglas",
+      "10.0%",
+      ""
+    ],
+    [
+      "Reglas",
+      "Violacion top-10 con reglas",
+      "0.0%",
+      ""
+    ]
+  ]
+}

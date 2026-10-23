@@ -1,0 +1,26 @@
+Bloque,Metrica,Valor,Nota
+Datos,Imagenes del subconjunto,"4,000",
+Datos,Instancias,"28,565",
+Datos,Instancias principales,"14,670",
+Datos,Partes,"13,895",
+Datos,Instancias con atributos,"18,114",63.4%
+Pares,Positivos (incluye sinteticos),"24,861",
+Pares,Negativos,"49,462",
+Pares,Sinteticos de apoyo,130,
+CNN,Accuracy top-1,0.624,
+CNN,Accuracy top-3,0.806,
+CNN,Macro F1,0.321,
+CNN,Weighted F1,0.615,
+CNN,Silueta (accuracy),0.485,
+CNN,Patron (accuracy),0.828,
+CNN,Largo (accuracy),0.598,
+CNN,Detalle (accuracy),0.699,
+Compatibilidad,AUC test,0.866,
+Compatibilidad,AP test,0.726,
+Compatibilidad,Accuracy test,0.768,
+Compatibilidad,F1 test,0.705,
+Taste,AUC preferencias test,1.000,sintetico
+Taste,NDCG@10,0.964,30 perfiles
+Taste + reglas,NDCG@10,0.961,30 perfiles
+Reglas,Violacion top-10 sin reglas,10.0%,
+Reglas,Violacion top-10 con reglas,0.0%,

@@ -1,0 +1,18 @@
+ORDEN DE ENTREGA - SPRINT 2
+===========================
+
+1. S2.0_Sprint_Goal_Y_Sprint_Backlog.docx
+2. 3.1_Dataset_limpio.docx
+3. 3.2_Dataset_de_pares_etiquetados.docx
+4. 3.3_Conjuntos_de_entrenamiento_validación_y_prueba.docx
+5. 4.1_Modelo_CNN_entrenado.docx
+6. 4.2_Modelo_MLP_de_compatibilidad.docx
+7. 4.3_MLP_de_personalización_y_filtros_de_reglas.docx
+8. 5.1_Reporte_de_métricas.docx
+9. 5.2_Reporte_comparativo_y_de_ablación.docx
+10. S2.1_Registro_breve_de_dailies.docx
+11. S2.2_Burndown_y_Backlog_actualizados.docx
+12. S2.3_Acta_de_Review.docx
+13. S2.4_Acta_de_Retrospective.docx
+
+Estos 13 DOCX son los entregables finales.
