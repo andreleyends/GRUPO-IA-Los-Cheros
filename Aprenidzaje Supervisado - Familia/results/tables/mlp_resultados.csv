@@ -1,0 +1,2 @@
+﻿modelo,mse,rmse,mae,r2,mejores_parametros,rmse_cv,tiempo_busqueda_s,tiempo_entrenamiento_s,tiempo_inferencia_s,n_iter_
+MLPRegressor,0.25806184062749843,0.5079978746289185,0.33699298815449824,0.8030677102243896,"{""mlp__solver"": ""adam"", ""mlp__learning_rate_init"": ""0.01"", ""mlp__hidden_layer_sizes"": ""(100, 50)"", ""mlp__early_stopping"": ""True"", ""mlp__alpha"": ""0.01"", ""mlp__activation"": ""tanh""}",0.5291822585106539,268.3743295999993,33.273032500001136,0.031086399998457637,135

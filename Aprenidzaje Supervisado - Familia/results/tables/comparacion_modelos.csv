@@ -1,0 +1,6 @@
+﻿familia,modelo,tipo_tarea,metrica_principal,valor_metrica,accuracy_o_r2,tiempo_entrenamiento_s,tiempo_inferencia_s,mejores_parametros
+Naive Bayes,MultinomialNB,Clasificación,F1 macro,0.9336283315078496,0.9333333333333333,1.333659699999771,0.1554071999998996,"{""clf__alpha"": 0.1, ""clf__fit_prior"": true, ""vectorizer__min_df"": 1, ""vectorizer__ngram_range"": [1, 1], ""vectorizer__tipo"": ""tfidf""}"
+Naive Bayes,ComplementNB,Clasificación,F1 macro,0.9425709459274092,0.9423076923076923,1.2815434999993158,0.1658103999998275,"{""clf__alpha"": 0.1, ""clf__fit_prior"": true, ""vectorizer__min_df"": 1, ""vectorizer__ngram_range"": [1, 1], ""vectorizer__tipo"": ""tfidf""}"
+Discriminante,LDA,Clasificación,F1 macro,0.9619111259605746,0.9649122807017544,0.01600019999932556,0.005034600000726641,"{""lda__shrinkage"": 0.1, ""lda__solver"": ""lsqr""}"
+Discriminante,QDA,Clasificación,F1 macro,0.9619111259605746,0.9649122807017544,0.012483599999541184,0.006403400000635884,"{""qda__reg_param"": 0.5}"
+Red neuronal,MLPRegressor,Regresión,RMSE,0.5079978746289185,0.8030677102243896,33.273032500001136,0.031086399998457637,"{""mlp__solver"": ""adam"", ""mlp__learning_rate_init"": ""0.01"", ""mlp__hidden_layer_sizes"": ""(100, 50)"", ""mlp__early_stopping"": ""True"", ""mlp__alpha"": ""0.01"", ""mlp__activation"": ""tanh""}"
