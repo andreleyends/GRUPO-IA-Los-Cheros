@@ -21,3 +21,5 @@ Thumbs.db
 # Documentos/archivos pesados (opcional)
 *.docx
 *.pdf
+# Sprint 3: recortes pesados (1,7 GB), se copian a mano
+recortes_144.npy
