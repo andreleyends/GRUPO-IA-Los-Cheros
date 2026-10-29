@@ -1,0 +1,8 @@
+# Sprint 3 · interfaz + recomendador (instalar con: pip install -r sprint3/requirements.txt)
+streamlit>=1.50
+numpy
+pandas
+pillow
+torch
+scikit-learn
+pytest
