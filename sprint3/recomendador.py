@@ -205,7 +205,7 @@ class Recomendador:
         self.cat_idx = torch.tensor(df["category_id"].astype(int).values, dtype=torch.long)
         self.nombres = df["category_name"].astype(str).values
         self.colores = df["color_nombre"].fillna("").astype(str).values
-        mask = df["es_principal"].astype(bool).values
+        mask = df["es_principal"].astype(bool).to_numpy(copy=True)  # copia: pandas>=3 da arreglos de solo lectura
         if split:
             mask &= (df["split"] == split).values
         self.catalogo = np.where(mask)[0]
