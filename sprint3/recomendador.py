@@ -350,32 +350,7 @@ class Recomendador:
                 "prenda_base": self._prenda(ib), "recomendaciones": filas,
                 "descartadas_por_reglas": int(descartadas)}
 
-        @lru_cache(maxsize=1)
-    def _cargar_recortes(self):
-        """Descarga y carga los recortes UNA sola vez para no saturar la memoria."""
-        ruta = _localizar(ARCHIVO_RECORTES, "STYLEMATE_DATA", obligatorio=False)
-        if ruta is None:
-            print(f"No se encontró {ARCHIVO_RECORTES} localmente. Descargando desde Hugging Face (1.78 GB)...")
-            try:
-                # Descarga el archivo desde el Dataset público
-                ruta_str = hf_hub_download(
-                    repo_id=REPO_DATASET,
-                    filename=ARCHIVO_RECORTES,
-                    repo_type="dataset"
-                )
-                ruta = Path(ruta_str)
-                print("¡Descarga completada!")
-            except Exception as e:
-                warnings.warn(f"Fallo al descargar los recortes: {e}")
-                return None
-                
-        try:
-            return np.load(ruta, mmap_mode="r")
-        except Exception as e:
-            warnings.warn(f"Fallo al cargar el archivo npy: {e}")
-            return None
-
-        @lru_cache(maxsize=1)
+    @lru_cache(maxsize=1)
     def _cargar_recortes(self):
         """Descarga y carga los recortes UNA sola vez para no saturar la memoria."""
         ruta = _localizar(ARCHIVO_RECORTES, "STYLEMATE_DATA", obligatorio=False)
@@ -429,7 +404,6 @@ def listar_prendas(categoria=None, n=24):
 
 def listar_perfiles():
     return obtener().listar_perfiles()
-
 
 # ----------------------------------------------------------------------------
 # Verificacion contra los resultados guardados del Sprint 2
