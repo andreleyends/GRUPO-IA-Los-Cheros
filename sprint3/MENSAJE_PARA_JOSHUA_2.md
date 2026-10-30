@@ -38,7 +38,7 @@ La CNN (GarmentNet) ya convirtió cada prenda del catálogo en un vector en el S
 | `plan_monitoreo_reentrenamiento.md` | Diego | Plan de monitoreo y reentrenamiento (1 página). |
 | `MENSAJE_PARA_JOSHUA_2.md` | Diego | Este documento. |
 
-### Raíz del repo (MLOps, de Diego)
+### Raíz del repo (MLOps, de Diego; el detalle de cada uno está en el punto 8)
 | Archivo | Para qué sirve |
 |---|---|
 | `Dockerfile` | Imagen de la web: Python 3.11, torch CPU, dependencias y el código de `sprint3/`. Puerto 8501. |
@@ -104,3 +104,56 @@ Pendiente: las capturas reales `capturas/real_1_inicio.png`, `real_2_looks.png` 
 - [ ] El comando B del punto 3 termina sin `failed` ni `skipped`
 - [ ] GitHub Actions en verde
 - [ ] Los tres informes (1 página cada uno) y el plan de monitoreo entregados
+
+## 8. Detalle de los archivos que subió Diego, agrupados por función
+Todos pertenecen al área **MLOps**: hacer que el sistema sea reproducible, probarlo solo y levantarlo en un contenedor. No cambian lo que recomienda el sistema, salvo los ajustes menores del grupo E.
+
+**Cómo se conectan:** al hacer `git push`, GitHub Actions (B) corre las pruebas y construye la imagen del contenedor (A). Quien clona el repo tiene el código, los datos livianos, los modelos y las reglas por Git (D); los recortes pesados se bajan con `dvc pull` (C). Con eso, `docker compose up --build` levanta la web real.
+
+### Grupo A · Contenedor (empaquetar y levantar la web)
+| Archivo | Qué hace | Detalles útiles para el informe |
+|---|---|---|
+| `Dockerfile` | Define la imagen de la web, en este orden: parte de Python 3.11 liviano, instala PyTorch en versión CPU, instala `sprint3/requirements.txt`, copia solo el código de `sprint3/` y arranca Streamlit. | Puerto 8501. Se ejecuta con un usuario sin privilegios. Trae `STYLEMATE_BACKEND=real` (falla a la vista si faltan datos, en lugar de caer al mock) y las variables `STYLEMATE_DATA`, `STYLEMATE_MODELS` y `STYLEMATE_RULES` con las rutas dentro del contenedor. Incluye una comprobación de salud sobre `/_stcore/health`. **No lleva datos ni modelos dentro**, por eso la imagen es pequeña. |
+| `docker-compose.yml` | Levanta el servicio `stylemate` con el recomendador real. | Monta como carpetas de solo lectura `sprint2/02_DATASET`, `sprint2/05_CODIGO/models` y `sprint1/E4_reglas_gusto`. Publica el puerto 8501 y reinicia el servicio si se cae. |
+| `.dockerignore` | Lista lo que **no** se copia a la imagen. | Excluye `.git`, `.venv`, los `.npy` y `.pt`, los `.docx` y `.pdf`, y las carpetas `sprint1/` y `sprint2/` (los datos entran por montaje, no por copia). |
+
+### Grupo B · Pruebas automáticas e integración continua
+| Archivo | Qué hace | Detalles útiles para el informe |
+|---|---|---|
+| `.github/workflows/tests.yml` | Flujo de GitHub Actions. Se ejecuta en cada `push` a `main` y en cada `pull request`. | Trabajo 1 (`pytest`): instala Python 3.11, torch CPU y las dependencias, y corre `pytest` dentro de `sprint3/`. Trabajo 2 (`docker`, solo si el primero pasa): construye la imagen y la levanta en modo mock, esperando hasta unos dos minutos a que responda `/_stcore/health`. |
+| `test_artefactos.py` | 10 comprobaciones de que no falta nada: 6 archivos de datos, 2 modelos, `rules.py` y los recortes. | Sin la variable `STYLEMATE_EXIGIR_ARTEFACTOS=1` las pruebas se **omiten** si falta algo (así el CI no se pone en rojo). Con la variable **fallan**: es el modo de la prueba final desde cero. |
+
+### Grupo C · Versionado de los datos pesados (DVC)
+| Archivo | Qué hace | Detalles útiles para el informe |
+|---|---|---|
+| `.dvc/config` | Dice dónde está el almacenamiento remoto. | Remoto `origin`, compatible con S3, en DagsHub (repositorio `stylemate-data`). **No contiene credenciales**. |
+| `.dvc/.gitignore`, `.dvcignore` | Archivos internos que DVC crea al iniciar. | Evitan que Git suba la caché local de DVC. |
+| `sprint2/02_DATASET/recortes_144.npy.dvc` | Puntero de texto a los recortes de las prendas (1,7 GB). | Guarda la huella y el tamaño del archivo real. Con `dvc pull` se descarga el archivo desde DagsHub. |
+
+Las credenciales de cada persona viven en `.dvc/config.local`, un archivo que Git ignora y que **no está en el repositorio**.
+
+### Grupo D · Reglas del Sprint 1 incorporadas al repo
+| Archivo | Qué hace | Detalles útiles para el informe |
+|---|---|---|
+| `sprint1/E4_reglas_gusto/rules.py` | Motor de reglas de estilo del Sprint 1 (tarea 1.7). Lo usa `recomendador.py`. | Define las 40 dimensiones de gusto y 6 reglas con su penalización: shorts con frío, deportivo en oficina, denim formal, doble estampado, límite de colores vivos y calzado abierto con lluvia. |
+| `sprint1/E4_reglas_gusto/lexico_moda.json` | Léxico de moda (español e inglés) que alimenta las 40 dimensiones, agrupadas en 8 familias. | `rules.py` lo lee al arrancar: **los dos archivos deben ir juntos**. |
+
+Estos dos archivos son del Sprint 1; Diego solo los incorporó al repo, porque faltaban y sin ellos el sistema usaba una versión simplificada de las reglas.
+
+### Grupo E · Ajustes a archivos de otros compañeros
+| Archivo | Ajuste | Motivo |
+|---|---|---|
+| `sprint3/recomendador.py` (línea 208) | La máscara de prendas se copia a un arreglo modificable. | Con pandas 3 el arreglo era de solo lectura y el programa se caía al arrancar. |
+| `sprint3/recomendador.py` (línea 272) | El motivo de cada regla sale como nombre corto (por ejemplo `invierno_sin_short`). | El motor del Sprint 1 devuelve diccionarios, y sin el ajuste se mostraban crudos en pantalla. |
+| `sprint3/app.py` | Se añadieron los nombres de las reglas del Sprint 1 al diccionario `TIPOS_REGLA`. | Para que la interfaz muestre las reglas con texto legible. |
+| `sprint3/test_recomendador.py`, `sprint3/test_interfaz.py` | Las pruebas eligen una prenda base que sí tenga combinaciones válidas. | Con las reglas reales, algunas prendas quedan sin candidatas (ver punto 6). |
+
+### Grupo F · Documentos de Diego
+| Archivo | Contenido |
+|---|---|
+| `informe_diego_mlops.md` | Una página: versionado (Git y DVC), contenedor, pruebas y CI, y limitaciones. |
+| `plan_monitoreo_reentrenamiento.md` | Una página: qué señales se vigilan (con umbrales propuestos por el equipo), cuándo y cómo se reentrena, y limitaciones. |
+| `MENSAJE_PARA_JOSHUA_2.md` | Este documento: mapa de todos los archivos del Sprint 3 y cómo trabajan juntos. |
+
+### Archivos en Git que no forman parte del sistema
+Los `.docx` de `sprint1/Entregables Propios/` y de `sprint2/01_DOCUMENTO_FINAL/` y `sprint2/06_RESPALDO/docs/` son entregables documentales de los sprints anteriores (reportes, actas, planificación, documento final). El sistema, las pruebas y el contenedor no los usan.
