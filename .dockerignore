@@ -5,14 +5,11 @@
 .dvc/config.local
 **/__pycache__
 **/.pytest_cache
-*.npy
-*.pt
 *.docx
 *.pdf
-sprint1/
-sprint2/
 documento/
 _versiones_anteriores/
 capturas/MOCK_*
 .venv
 **/.venv
+recortes_144.npy
