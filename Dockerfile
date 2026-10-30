@@ -23,6 +23,13 @@ RUN pip install -r sprint3/requirements.txt
 
 # 3) codigo. Datos, modelos y rules.py NO van en la imagen: se montan (ver docker-compose.yml)
 COPY sprint3/ sprint3/
+
+# --- ESTAS SON LAS LÍNEAS NUEVAS QUE DEBES AGREGAR ---
+COPY sprint1/ sprint1/
+COPY sprint2/02_DATASET/ sprint2/02_DATASET/
+COPY sprint2/05_CODIGO/models/ sprint2/05_CODIGO/models/
+# -----------------------------------------------------
+
 RUN chown -R app:app /app
 USER app
 
