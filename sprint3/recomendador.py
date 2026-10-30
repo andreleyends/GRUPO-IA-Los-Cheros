@@ -44,7 +44,7 @@ SEMILLA = 42
 
 # --- CONFIGURACIÓN PARA HUGGING FACE ---
 REPO_DATASET = "DiegoMT2/stylemate-datos"
-ARCHIVO_RECORTES = "recortes_144.npy"
+ARCHIVO_RECORTES = "recortes_pequeno.npy"
 
 # ----------------------------------------------------------------------------
 # Constantes copiadas del Sprint 2 (config.py y 4_3_entrenar_taste.py)
