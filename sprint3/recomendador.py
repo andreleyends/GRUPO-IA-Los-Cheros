@@ -37,9 +37,14 @@ import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
+from huggingface_hub import hf_hub_download # <--- NUEVA IMPORTACIÓN
 
 AQUI = Path(__file__).resolve().parent
 SEMILLA = 42
+
+# --- CONFIGURACIÓN PARA HUGGING FACE ---
+REPO_DATASET = "DiegoMT2/stylemate-datos"
+ARCHIVO_RECORTES = "recortes_144.npy"
 
 # ----------------------------------------------------------------------------
 # Constantes copiadas del Sprint 2 (config.py y 4_3_entrenar_taste.py)
@@ -345,12 +350,40 @@ class Recomendador:
                 "prenda_base": self._prenda(ib), "recomendaciones": filas,
                 "descartadas_por_reglas": int(descartadas)}
 
-    def recorte(self, pos: int):
-        """Recorte RGB 144x144 de la prenda, o None si recortes_144.npy no esta."""
-        ruta = _localizar("recortes_144.npy", "STYLEMATE_DATA", obligatorio=False)
+        @lru_cache(maxsize=1)
+    def _cargar_recortes(self):
+        """Descarga y carga los recortes UNA sola vez para no saturar la memoria."""
+        ruta = _localizar(ARCHIVO_RECORTES, "STYLEMATE_DATA", obligatorio=False)
         if ruta is None:
+            print(f"No se encontró {ARCHIVO_RECORTES} localmente. Descargando desde Hugging Face (1.78 GB)...")
+            try:
+                # Descarga el archivo desde el Dataset público
+                ruta_str = hf_hub_download(
+                    repo_id=REPO_DATASET,
+                    filename=ARCHIVO_RECORTES,
+                    repo_type="dataset"
+                )
+                ruta = Path(ruta_str)
+                print("¡Descarga completada!")
+            except Exception as e:
+                warnings.warn(f"Fallo al descargar los recortes: {e}")
+                return None
+                
+        try:
+            return np.load(ruta, mmap_mode="r")
+        except Exception as e:
+            warnings.warn(f"Fallo al cargar el archivo npy: {e}")
             return None
-        return np.asarray(np.load(ruta, mmap_mode="r")[int(pos)])
+
+    def recorte(self, pos: int):
+        """Recorte RGB 144x144 de la prenda, o None si falla."""
+        recortes_array = self._cargar_recortes()
+        if recortes_array is None:
+            return None
+        try:
+            return np.asarray(recortes_array[int(pos)])
+        except IndexError:
+            return None
 
 
 # ----------------------------------------------------------------------------
