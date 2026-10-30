@@ -14,3 +14,5 @@ sprint2/
 documento/
 _versiones_anteriores/
 capturas/MOCK_*
+.venv
+**/.venv
