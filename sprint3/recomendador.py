@@ -375,6 +375,31 @@ class Recomendador:
             warnings.warn(f"Fallo al cargar el archivo npy: {e}")
             return None
 
+        @lru_cache(maxsize=1)
+    def _cargar_recortes(self):
+        """Descarga y carga los recortes UNA sola vez para no saturar la memoria."""
+        ruta = _localizar(ARCHIVO_RECORTES, "STYLEMATE_DATA", obligatorio=False)
+        if ruta is None:
+            print(f"No se encontró {ARCHIVO_RECORTES} localmente. Descargando desde Hugging Face (1.78 GB)...")
+            try:
+                from huggingface_hub import hf_hub_download
+                ruta_str = hf_hub_download(
+                    repo_id=REPO_DATASET,
+                    filename=ARCHIVO_RECORTES,
+                    repo_type="dataset"
+                )
+                ruta = Path(ruta_str)
+                print("¡Descarga completada!")
+            except Exception as e:
+                warnings.warn(f"Fallo al descargar los recortes: {e}")
+                return None
+                
+        try:
+            return np.load(ruta, mmap_mode="r")
+        except Exception as e:
+            warnings.warn(f"Fallo al cargar el archivo npy: {e}")
+            return None
+
     def recorte(self, pos: int):
         """Recorte RGB 144x144 de la prenda, o None si falla."""
         recortes_array = self._cargar_recortes()
