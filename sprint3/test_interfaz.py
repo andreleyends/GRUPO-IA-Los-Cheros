@@ -33,7 +33,9 @@ def be(request):
 
 def _un_caso(be):
     perfil = [p for p in be.listar_perfiles() if p["split"] == "test"][0]["perfil"]
-    prenda = be.listar_prendas(n=5)[0]
+    # Base con al menos una combinacion valida (algunas prendas quedan sin candidatas por reglas)
+    prenda = next(p for p in be.listar_prendas(n=60)
+                  if be.recomendar(perfil, p["annotation_id"], top_k=1)["recomendaciones"])
     return perfil, prenda
 
 
@@ -86,7 +88,9 @@ def test_mock_y_real_tienen_las_mismas_claves():
         pytest.skip(str(e)[:80])
     import mock_recomendador as mock
     p_r = [p for p in real.listar_perfiles() if p["split"] == "test"][0]["perfil"]
-    a = real.recomendar(p_r, real.listar_prendas(n=1)[0]["annotation_id"], top_k=3)
+    base_r = next(p for p in real.listar_prendas(n=60)
+                  if real.recomendar(p_r, p["annotation_id"], top_k=1)["recomendaciones"])
+    a = real.recomendar(p_r, base_r["annotation_id"], top_k=3)
     b = mock.recomendar("test_0000", mock.listar_prendas(n=1)[0]["annotation_id"], top_k=3)
     assert set(a) == set(b)
     assert set(a["recomendaciones"][0]) == set(b["recomendaciones"][0])

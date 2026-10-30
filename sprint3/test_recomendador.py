@@ -13,7 +13,13 @@ def datos():
     except FileNotFoundError as e:  # en CI sin los datos pesados
         pytest.skip(str(e))
     perfil = [p for p in r.listar_perfiles() if p["split"] == "test"][0]["perfil"]
-    return r, perfil, r.listar_prendas(n=5)
+    # Solo prendas base con al menos una combinacion valida: algunas (p. ej. un vestido que ya
+    # trae dos estampados) hacen que la regla de doble estampado descarte todas las candidatas.
+    prendas = [p for p in r.listar_prendas(n=60)
+               if r.recomendar(perfil, p["annotation_id"], top_k=1)["recomendaciones"]][:5]
+    if not prendas:
+        pytest.fail("Ninguna prenda base produce recomendaciones validas")
+    return r, perfil, prendas
 
 
 def test_devuelve_top_k(datos):

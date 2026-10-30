@@ -20,6 +20,12 @@ TIPOS_REGLA = {
     "denim_formal": "Denim en contexto formal",
     "doble_estampado": "Doble estampado",
     "exceso_colores_vivos": "Exceso de colores vivos",
+    "invierno_sin_short": "Shorts con clima frío",
+    "oficina_sin_deportivo": "Prenda deportiva en la oficina",
+    "formal_sin_denim": "Denim en look formal",
+    "sin_doble_estampado": "Doble estampado",
+    "limite_color_vivo": "Exceso de colores vivos",
+    "lluvia_calzado": "Calzado abierto con lluvia",
 }
 
 

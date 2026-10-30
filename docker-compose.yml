@@ -1,0 +1,15 @@
+# Levanta la web con el recomendador REAL. Uso:  docker compose up --build
+# Requiere haber hecho `dvc pull` antes (los datos y modelos se montan, no se copian a la imagen).
+services:
+  stylemate:
+    build: .
+    image: stylemate:local
+    ports:
+      - "8501:8501"
+    environment:
+      STYLEMATE_BACKEND: real      # falla a la vista si faltan datos o modelos
+    volumes:
+      - ./sprint2/02_DATASET:/app/sprint2/02_DATASET:ro
+      - ./sprint2/05_CODIGO/models:/app/sprint2/05_CODIGO/models:ro
+      - ./sprint1/E4_reglas_gusto:/app/sprint1/E4_reglas_gusto:ro
+    restart: unless-stopped

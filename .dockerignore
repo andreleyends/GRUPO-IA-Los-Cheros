@@ -1,0 +1,16 @@
+.git
+.github
+.dvc/cache
+.dvc/tmp
+.dvc/config.local
+**/__pycache__
+**/.pytest_cache
+*.npy
+*.pt
+*.docx
+*.pdf
+sprint1/
+sprint2/
+documento/
+_versiones_anteriores/
+capturas/MOCK_*

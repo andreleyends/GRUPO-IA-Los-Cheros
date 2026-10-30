@@ -205,7 +205,7 @@ class Recomendador:
         self.cat_idx = torch.tensor(df["category_id"].astype(int).values, dtype=torch.long)
         self.nombres = df["category_name"].astype(str).values
         self.colores = df["color_nombre"].fillna("").astype(str).values
-        mask = df["es_principal"].astype(bool).values
+        mask = df["es_principal"].astype(bool).to_numpy(copy=True)
         if split:
             mask &= (df["split"] == split).values
         self.catalogo = np.where(mask)[0]
@@ -269,7 +269,7 @@ class Recomendador:
         else:
             pen, detalle = _reglas_simples(tokens, ctx)
         if isinstance(detalle, (list, tuple, set)):
-            detalle = [str(x) for x in detalle]
+            detalle = [str(x["regla"]) if isinstance(x, dict) and "regla" in x else str(x) for x in detalle]
         elif isinstance(detalle, dict):
             detalle = [str(k) for k in detalle]
         else:
