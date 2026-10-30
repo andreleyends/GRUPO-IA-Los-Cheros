@@ -1,0 +1,5 @@
+outs:
+- md5: bc0195f19f87f636c2dd59c94ba52332
+  size: 1776971648
+  hash: md5
+  path: recortes_144.npy
